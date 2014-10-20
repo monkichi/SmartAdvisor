@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- Framelayout to display Fragments -->
+    <FrameLayout android:layout_width="match_parent"
+        android:id="@+id/frame_container"
+        android:layout_height="match_parent"
+        android:background="@drawable/navdrawer"/>
+
+    <ListView android:id="@+id/list_slidermenu"
+        android:layout_height="match_parent"
+        android:layout_width="240dp"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="1dp"/>
+</android.support.v4.widget.DrawerLayout><!-- From: file:/C:/Users/nano/AndroidstudioProjects/SmartAdvisor/app/src/main/res/layout/mainlayout.xml -->
