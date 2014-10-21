@@ -13,7 +13,15 @@
         android:icon="@drawable/menu_icon"
         android:label="Smart Advisor"
         android:theme="@style/customactbar" >
+        <activity
+            android:name=".Main"
+            android:label="@string/title_activity_mainactivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -23,31 +23,56 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class color {
         public static final int black_overlay=0x7f050000;
+        public static final int red=0x7f050001;
+    }
+    public static final class dimen {
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+        public static final int navigation_drawer_width=0x7f060002;
     }
     public static final class drawable {
         public static final int actbar=0x7f020000;
-        public static final int back=0x7f020001;
-        public static final int classviews=0x7f020002;
-        public static final int classviews2=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int menu_icon=0x7f020005;
-        public static final int navdrawer=0x7f020006;
+        public static final int actbar2=0x7f020001;
+        public static final int back=0x7f020002;
+        public static final int classviews=0x7f020003;
+        public static final int classviews2=0x7f020004;
+        public static final int drawer_shadow=0x7f020005;
+        public static final int ic_drawer=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int menu_icon=0x7f020008;
+        public static final int navdrawer=0x7f020009;
     }
     public static final class id {
-        public static final int detail=0x7f080003;
-        public static final int frame_container=0x7f080001;
-        public static final int list_slidermenu=0x7f080002;
-        public static final int mainview=0x7f080000;
+        public static final int action_example=0x7f0a0005;
+        public static final int action_settings=0x7f0a0004;
+        public static final int container=0x7f0a0001;
+        public static final int drawer_layout=0x7f0a0000;
+        public static final int navigation_drawer=0x7f0a0002;
+        public static final int section_label=0x7f0a0003;
     }
     public static final class layout {
-        public static final int mainlayout=0x7f030000;
-        public static final int menu_detail_fragment=0x7f030001;
-        public static final int test=0x7f030002;
+        public static final int activity_main=0x7f030000;
+        public static final int fragment_main=0x7f030001;
+        public static final int fragment_navigation_drawer=0x7f030002;
+    }
+    public static final class menu {
+        public static final int global=0x7f090000;
+        public static final int main=0x7f090001;
+        public static final int mainactivity=0x7f090002;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int dummy_button=0x7f060001;
-        public static final int dummy_content=0x7f060002;
+        public static final int action_example=0x7f070000;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070002;
+        public static final int dummy_button=0x7f070003;
+        public static final int dummy_content=0x7f070004;
+        public static final int navigation_drawer_close=0x7f070005;
+        public static final int navigation_drawer_open=0x7f070006;
+        public static final int title_activity_main=0x7f070007;
+        public static final int title_activity_mainactivity=0x7f070008;
+        public static final int title_section1=0x7f070009;
+        public static final int title_section2=0x7f07000a;
+        public static final int title_section3=0x7f07000b;
     }
     public static final class style {
         /** 
@@ -58,15 +83,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int ButtonBar=0x7f070002;
-        public static final int ButtonBarButton=0x7f070003;
-        public static final int FullscreenActionBarStyle=0x7f070006;
-        public static final int FullscreenTheme=0x7f070004;
-        public static final int Theme_demostyle=0x7f070005;
+        public static final int AppTheme=0x7f080001;
+        public static final int ButtonBar=0x7f080002;
+        public static final int ButtonBarButton=0x7f080003;
+        public static final int FullscreenActionBarStyle=0x7f080007;
+        public static final int FullscreenTheme=0x7f080004;
+        public static final int actionbar=0x7f080005;
+        public static final int customactbar=0x7f080006;
     }
     public static final class styleable {
         /** Attributes that can be used with a ButtonBarContainerTheme.
