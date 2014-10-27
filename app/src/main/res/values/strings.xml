@@ -12,7 +12,7 @@
 
     <string name="title_activity_mainactivity">mainactivity</string>
     <string name="Home">Home</string>
-    <string name="Settings">Secttings</string>
+    <string name="Settings">Settings</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
