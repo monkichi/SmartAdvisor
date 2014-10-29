@@ -12,6 +12,8 @@
 
     <string name="title_activity_mainactivity">mainactivity</string>
     <string name="Home">Home</string>
+    <string name="Past">Past</string>
+    <string name="Advisement">Advisement</string>
     <string name="Settings">Settings</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

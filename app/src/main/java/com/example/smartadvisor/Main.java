@@ -62,10 +62,13 @@ public class Main extends Activity
                 mTitle = getString(R.string.Home);
                 break;
             case 2:
-                mTitle = getString(R.string.Settings);
+                mTitle = getString(R.string.Past);
                 break;
             case 3:
-                //mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.Advisement);
+                break;
+            case 4:
+                mTitle = getString(R.string.Settings);
                 break;
         }
     }
