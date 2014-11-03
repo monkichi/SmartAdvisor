@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/menu_icon"
+        android:icon="@drawable/ic_drawer"
         android:label="Smart Advisor"
         android:theme="@style/customactbar" >
         <activity
