@@ -8,9 +8,6 @@
 package com.example.smartadvisor;
 
 public final class R {
-    public static final class array {
-        public static final int nav_drawer_items=0x7f040000;
-    }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -22,13 +19,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int buttonBarStyle=0x7f010000;
     }
     public static final class color {
-        public static final int black_overlay=0x7f050000;
-        public static final int red=0x7f050001;
+        public static final int black_overlay=0x7f040000;
+        public static final int red=0x7f040001;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
-        public static final int navigation_drawer_width=0x7f060002;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
+        public static final int navigation_drawer_width=0x7f050002;
     }
     public static final class drawable {
         public static final int actbar=0x7f020000;
@@ -43,13 +40,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int navdrawer=0x7f020009;
     }
     public static final class id {
-        public static final int action_example=0x7f0a0006;
-        public static final int action_settings=0x7f0a0005;
-        public static final int container=0x7f0a0001;
-        public static final int drawer_layout=0x7f0a0000;
-        public static final int gridview=0x7f0a0004;
-        public static final int navigation_drawer=0x7f0a0002;
-        public static final int section_label=0x7f0a0003;
+        public static final int action_example=0x7f090006;
+        public static final int action_settings=0x7f090005;
+        public static final int container=0x7f090001;
+        public static final int drawer_layout=0x7f090000;
+        public static final int gridview=0x7f090004;
+        public static final int navigation_drawer=0x7f090002;
+        public static final int section_label=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -57,24 +54,47 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_navigation_drawer=0x7f030002;
     }
     public static final class menu {
-        public static final int global=0x7f090000;
-        public static final int main=0x7f090001;
-        public static final int mainactivity=0x7f090002;
+        public static final int global=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int mainactivity=0x7f080002;
     }
     public static final class string {
-        public static final int Advisement=0x7f070000;
-        public static final int Home=0x7f070001;
-        public static final int Past=0x7f070002;
-        public static final int Settings=0x7f070003;
-        public static final int action_example=0x7f070004;
-        public static final int action_settings=0x7f070005;
-        public static final int app_name=0x7f070006;
-        public static final int dummy_button=0x7f070007;
-        public static final int dummy_content=0x7f070008;
-        public static final int navigation_drawer_close=0x7f070009;
-        public static final int navigation_drawer_open=0x7f07000a;
-        public static final int title_activity_main=0x7f07000b;
-        public static final int title_activity_mainactivity=0x7f07000c;
+        public static final int Advisement=0x7f060000;
+        public static final int GE=0x7f060001;
+        public static final int Home=0x7f060002;
+        public static final int Past=0x7f060003;
+        public static final int Settings=0x7f060004;
+        public static final int action_example=0x7f060005;
+        public static final int action_settings=0x7f060006;
+        public static final int app_name=0x7f060007;
+        public static final int comp110=0x7f060008;
+        public static final int comp122=0x7f060009;
+        public static final int comp182=0x7f06000a;
+        public static final int comp222=0x7f06000b;
+        public static final int comp256=0x7f06000c;
+        public static final int comp282=0x7f06000d;
+        public static final int comp310=0x7f06000e;
+        public static final int comp322=0x7f06000f;
+        public static final int comp333=0x7f060010;
+        public static final int comp380=0x7f060011;
+        public static final int comp490=0x7f060012;
+        public static final int comp491L=0x7f060013;
+        public static final int dummy_button=0x7f060014;
+        public static final int dummy_content=0x7f060015;
+        public static final int labscience=0x7f060016;
+        public static final int math102=0x7f060017;
+        public static final int math104=0x7f060018;
+        public static final int math150A=0x7f060019;
+        public static final int math150B=0x7f06001a;
+        public static final int math262=0x7f06001b;
+        public static final int math341=0x7f06001c;
+        public static final int math482=0x7f06001d;
+        public static final int navigation_drawer_close=0x7f06001e;
+        public static final int navigation_drawer_open=0x7f06001f;
+        public static final int phil230=0x7f060020;
+        public static final int senelect=0x7f060021;
+        public static final int title_activity_main=0x7f060022;
+        public static final int title_activity_mainactivity=0x7f060023;
     }
     public static final class style {
         /** 
@@ -85,16 +105,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int ButtonBar=0x7f080002;
-        public static final int ButtonBarButton=0x7f080003;
-        public static final int FullscreenActionBarStyle=0x7f080007;
-        public static final int FullscreenTheme=0x7f080004;
-        public static final int actionbar=0x7f080005;
-        public static final int customactbar=0x7f080006;
+        public static final int AppTheme=0x7f070001;
+        public static final int ButtonBar=0x7f070002;
+        public static final int ButtonBarButton=0x7f070003;
+        public static final int FullscreenActionBarStyle=0x7f070007;
+        public static final int FullscreenTheme=0x7f070004;
+        public static final int actionbar=0x7f070005;
+        public static final int customactbar=0x7f070006;
     }
     public static final class styleable {
         /** Attributes that can be used with a ButtonBarContainerTheme.
