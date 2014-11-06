@@ -29,6 +29,7 @@ public class Main extends Activity
 
     //variables for other purposes (data storage, info about student classes, etc)
     String filename = "advisor_data";
+
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
