@@ -4,8 +4,6 @@
     <string name="app_name">Smart Advisor</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
-
     <string name="title_activity_mainactivity">mainactivity</string>
     <string name="Home">Home</string>
     <string name="Past">Past</string>
@@ -16,7 +14,6 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">Main</string>
-
     <string name="comp110">Comp 110/L</string>
     <string name="comp122">Comp 122/L</string>
     <string name="comp182">Comp 182/L</string>
@@ -40,5 +37,16 @@
     <string name="phil230">Phil 230</string>
     <string name="labscience">Lab Science</string>
     <string name="GE">General Education</string>
+    <string name="title_activity_incoming_student">IncomingStudent</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="new_student">Are You a freshman or transfer student?</string>
+    <string-array name="student_type_array">
+        <item>Freshman</item>
+        <item>Transfer</item>
+    </string-array>
 
 </resources>

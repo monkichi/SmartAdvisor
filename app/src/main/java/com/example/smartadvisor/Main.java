@@ -5,7 +5,9 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -16,7 +18,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.List;
 
 
 public class Main extends Activity
@@ -28,8 +37,8 @@ public class Main extends Activity
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     //variables for other purposes (data storage, info about student classes, etc)
-    String filename = "advisor_data";
-
+    String filename = "future_plan_data";
+    List<List<Course>> plan;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -48,6 +57,25 @@ public class Main extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        fileopen();
+    }
+
+    public void fileopen(){
+        try{
+            FileInputStream filein = new FileInputStream(filename);
+        }catch (FileNotFoundException f){
+            File newfile = new File(filename);
+            getNewStudentData();
+        }
+    }
+
+    public void getNewStudentData(){
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        BlankFragment blankFragment = new BlankFragment();
+        ft.add(R.id.container, blankFragment);
+        ft.commit();
     }
 
     @Override

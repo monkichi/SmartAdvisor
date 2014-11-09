@@ -13,8 +13,7 @@
         android:icon="@drawable/ic_drawer"
         android:label="Smart Advisor"
         android:theme="@style/customactbar" >
-        <activity
-            android:name=".Main" >
+        <activity android:name=".Main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
