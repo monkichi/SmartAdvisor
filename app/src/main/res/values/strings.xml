@@ -44,9 +44,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="new_student">Are You a freshman or transfer student?</string>
-    <string-array name="student_type_array">
-        <item>Freshman</item>
-        <item>Transfer</item>
-    </string-array>
+    <string name="freshman">Freshman</string>
+    <string name="transfer">Transfer</string>
 
 </resources>

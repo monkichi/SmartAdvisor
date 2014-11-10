@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -18,6 +21,7 @@ import android.widget.TextView;
  */
 public class BlankFragment extends Fragment {
 
+    String type;
 
     public BlankFragment() {
         // Required empty public constructor
@@ -29,19 +33,34 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_incoming_student, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_incoming_student, container, false);
 
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.student_type);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(),
-                R.array.student_type_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        final RadioGroup group = (RadioGroup) rootView.findViewById(R.id.student_group);
+        final Button btnDisplay = (Button) rootView.findViewById(R.id.btnDisplay);
+        btnDisplay.setOnClickListener(new View.OnClickListener() {
+        RadioButton studtype;
+            @Override
+            public void onClick(View v) {
+
+                // get selected radio button from radioGroup
+                int selectedId = group.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+                studtype = (RadioButton) rootView.findViewById(selectedId);
+
+                Toast.makeText(getActivity(),
+                        studtype.getText(), Toast.LENGTH_SHORT).show();
+
+                type = studtype.toString();
+            }
+
+        });
 
         return rootView;
     }
 
+    public String getType(){
+        return type;
+    }
 
 }

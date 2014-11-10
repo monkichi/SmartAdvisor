@@ -34,6 +34,7 @@ public class Main extends Activity
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
+    String type;
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     //variables for other purposes (data storage, info about student classes, etc)
@@ -76,6 +77,7 @@ public class Main extends Activity
         BlankFragment blankFragment = new BlankFragment();
         ft.add(R.id.container, blankFragment);
         ft.commit();
+        type = blankFragment.getType();
     }
 
     @Override
