@@ -9,10 +9,10 @@ public class Course {
     private String name;
     private boolean elective;
 
-    public Course(ArrayList<Course> p, String n, boolean e){
+    public Course(ArrayList<Course> p, String n){
         prereqs = p;
         name = n;
-        elective = e;
+        elective = false;
     }
 
     public ArrayList<Course> getPrereqs(){
@@ -21,6 +21,10 @@ public class Course {
 
     public String getName(){
         return name;
+    }
+
+    public void setElectiveTrue(){
+        elective = true;
     }
 
     public boolean isElective(){

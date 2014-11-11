@@ -1,0 +1,122 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.smartadvisor.GetPastCourses">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/select_past_courses"
+        android:gravity="center"
+        android:textSize="24dp"/>
+    <TableRow>
+    <CheckBox android:id="@+id/comp108check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp108"
+        android:textSize="20dp"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox android:id="@+id/comp110check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp110"
+        android:onClick="onCheckboxClicked"
+        android:textSize="20dp"
+        android:layout_gravity="right"/>
+    </TableRow>
+        <TableRow>
+        <CheckBox android:id="@+id/comp122check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comp122"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/comp182check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comp182"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"
+            android:layout_gravity="right"/>
+        </TableRow>
+        <TableRow>
+        <CheckBox android:id="@+id/comp222check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comp222"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/comp256_Lcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comp256"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"
+            android:layout_gravity="right"/>
+        </TableRow>
+        <TableRow>
+        <CheckBox android:id="@+id/comp282check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comp282"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"/>
+            <CheckBox android:id="@+id/math102check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/math102"
+                android:textSize="20dp"
+                android:layout_gravity="right"
+                android:onClick="onCheckboxClicked"/>
+        </TableRow>
+        <TableRow>
+            <CheckBox android:id="@+id/math104check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/math104"
+                android:textSize="20dp"
+                android:onClick="onCheckBoxClicked"/>
+            <CheckBox android:id="@+id/math150Acheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/math150A"
+                android:textSize="20dp"
+                android:layout_gravity="right"
+                android:onClick="onCheckBoxClicked"/>
+
+        </TableRow>
+        <TableRow>
+            <CheckBox android:id="@+id/math150Bcheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/math150B"
+                android:textSize="20dp"
+                android:onClick="onCheckBoxClicked"/>
+            <CheckBox android:id="@+id/math262check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/math262"
+                android:textSize="20dp"
+                android:layout_gravity="right"
+                android:onClick="onCheckBoxClicked"/>
+        </TableRow>
+        <TableRow>
+            <CheckBox android:id="@+id/phil230check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phil230"
+                android:textSize="20dp"
+                android:onClick="onCheckBoxClicked"/>
+        </TableRow>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
+    </TableLayout>
+</FrameLayout>

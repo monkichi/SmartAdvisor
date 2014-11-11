@@ -78,6 +78,9 @@ public class Main extends Activity
         ft.add(R.id.container, blankFragment);
         ft.commit();
         type = blankFragment.getType();
+        if(type.equalsIgnoreCase("transfer")){
+
+        }
     }
 
     @Override
