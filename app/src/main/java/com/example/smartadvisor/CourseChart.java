@@ -59,4 +59,8 @@ public class CourseChart {
         pre.add(map.get(p3));
         map.put(n, new Course(pre,n));
     }
+
+    public Course getCourse(String n){
+        return map.get(n);
+    }
 }
