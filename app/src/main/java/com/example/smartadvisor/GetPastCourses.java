@@ -2,11 +2,13 @@ package com.example.smartadvisor;
 
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
@@ -33,6 +35,13 @@ public class GetPastCourses extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_get_past_courses, container, false);
         onCheckboxClicked(rootview);
+        final Button done = (Button) rootview.findViewById(R.id.done);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return rootview;
     }
 
@@ -71,16 +80,28 @@ public class GetPastCourses extends Fragment {
                     past.add(courseChart.getCourse("Comp 282"));
                 break;
             case R.id.math102check:
+                if (checked)
+                    past.add(courseChart.getCourse("Math 102"));
                 break;
             case R.id.math104check:
+                if (checked)
+                    past.add(courseChart.getCourse("Math 104"));
                 break;
             case R.id.math150Acheck:
+                if (checked)
+                    past.add(courseChart.getCourse("Math 150A"));
                 break;
             case R.id.math150Bcheck:
+                if (checked)
+                    past.add(courseChart.getCourse("Math 150B"));
                 break;
             case R.id.math262check:
+                if (checked)
+                    past.add(courseChart.getCourse("Math 262"));
                 break;
             case R.id.phil230check:
+                if (checked)
+                    past.add(courseChart.getCourse("Phil 230"));
                 break;
         }
     }

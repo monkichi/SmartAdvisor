@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -40,6 +41,7 @@ public class Main extends Activity
     //variables for other purposes (data storage, info about student classes, etc)
     String filename = "future_plan_data";
     List<List<Course>> plan;
+    ArrayList<Course> past;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -71,16 +73,16 @@ public class Main extends Activity
         }
     }
 
-    public void getNewStudentData(){
+    public void getNewStudentData() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         BlankFragment blankFragment = new BlankFragment();
         ft.add(R.id.container, blankFragment);
         ft.commit();
         type = blankFragment.getType();
-        if(type.equalsIgnoreCase("transfer")){
-
-        }
+        GetPastCourses pastCourses = new GetPastCourses();
+        ft.add(R.id.container, pastCourses);
+        ft.commit();
     }
 
     @Override
