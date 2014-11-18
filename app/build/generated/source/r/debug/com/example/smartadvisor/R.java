@@ -21,6 +21,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class color {
         public static final int black_overlay=0x7f040000;
         public static final int red=0x7f040001;
+        public static final int white=0x7f040002;
     }
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f050000;
@@ -40,23 +41,42 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int navdrawer=0x7f020009;
     }
     public static final class id {
-        public static final int action_example=0x7f09000a;
-        public static final int action_settings=0x7f090009;
-        public static final int btnDisplay=0x7f090007;
+        public static final int action_example=0x7f09001c;
+        public static final int action_settings=0x7f09001b;
+        public static final int btnDisplay=0x7f090018;
+        public static final int comp108check=0x7f090004;
+        public static final int comp110check=0x7f090005;
+        public static final int comp122check=0x7f090006;
+        public static final int comp182check=0x7f090007;
+        public static final int comp222check=0x7f090008;
+        public static final int comp256_Lcheck=0x7f090009;
+        public static final int comp282check=0x7f09000a;
         public static final int container=0x7f090001;
+        public static final int done=0x7f090012;
         public static final int drawer_layout=0x7f090000;
-        public static final int fresh_radio=0x7f090005;
-        public static final int gridview=0x7f090008;
+        public static final int fragment_get_past_courses=0x7f090003;
+        public static final int fragment_incoming_student=0x7f090013;
+        public static final int fresh_radio=0x7f090016;
+        public static final int gridview=0x7f09001a;
+        public static final int math102check=0x7f09000b;
+        public static final int math104check=0x7f09000c;
+        public static final int math150Acheck=0x7f09000d;
+        public static final int math150Bcheck=0x7f09000e;
+        public static final int math262check=0x7f09000f;
         public static final int navigation_drawer=0x7f090002;
-        public static final int section_label=0x7f090003;
-        public static final int student_group=0x7f090004;
-        public static final int trans_radio=0x7f090006;
+        public static final int noclasses=0x7f090011;
+        public static final int phil230check=0x7f090010;
+        public static final int plan=0x7f090019;
+        public static final int section_label=0x7f090014;
+        public static final int student_group=0x7f090015;
+        public static final int trans_radio=0x7f090017;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_incoming_student=0x7f030001;
-        public static final int fragment_main=0x7f030002;
-        public static final int fragment_navigation_drawer=0x7f030003;
+        public static final int fragment_get_past_courses=0x7f030001;
+        public static final int fragment_incoming_student=0x7f030002;
+        public static final int fragment_main=0x7f030003;
+        public static final int fragment_navigation_drawer=0x7f030004;
     }
     public static final class menu {
         public static final int global=0x7f080000;
@@ -73,42 +93,41 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int action_example=0x7f060005;
         public static final int action_settings=0x7f060006;
         public static final int app_name=0x7f060007;
-        public static final int comp110=0x7f060008;
-        public static final int comp122=0x7f060009;
-        public static final int comp182=0x7f06000a;
-        public static final int comp222=0x7f06000b;
-        public static final int comp256=0x7f06000c;
-        public static final int comp282=0x7f06000d;
-        public static final int comp310=0x7f06000e;
-        public static final int comp322=0x7f06000f;
-        public static final int comp333=0x7f060010;
-        public static final int comp380=0x7f060011;
-        public static final int comp490=0x7f060012;
-        public static final int comp491L=0x7f060013;
-        public static final int dummy_button=0x7f060014;
-        public static final int dummy_content=0x7f060015;
-        public static final int freshman=0x7f060016;
-        public static final int hello_blank_fragment=0x7f060017;
-        public static final int labscience=0x7f060018;
-        public static final int math102=0x7f060019;
-        public static final int math104=0x7f06001a;
-        public static final int math150A=0x7f06001b;
-        public static final int math150B=0x7f06001c;
-        public static final int math262=0x7f06001d;
-        public static final int math341=0x7f06001e;
-        public static final int math482=0x7f06001f;
-        public static final int navigation_drawer_close=0x7f060020;
-        public static final int navigation_drawer_open=0x7f060021;
-        public static final int new_student=0x7f060022;
-        public static final int phil230=0x7f060023;
-        public static final int senelect=0x7f060024;
-        public static final int title_activity_incoming_student=0x7f060025;
-        public static final int title_activity_main=0x7f060026;
-        public static final int title_activity_mainactivity=0x7f060027;
-        public static final int title_section1=0x7f060028;
-        public static final int title_section2=0x7f060029;
-        public static final int title_section3=0x7f06002a;
-        public static final int transfer=0x7f06002b;
+        public static final int comp108=0x7f060008;
+        public static final int comp110=0x7f060009;
+        public static final int comp122=0x7f06000a;
+        public static final int comp182=0x7f06000b;
+        public static final int comp222=0x7f06000c;
+        public static final int comp256=0x7f06000d;
+        public static final int comp282=0x7f06000e;
+        public static final int comp310=0x7f06000f;
+        public static final int comp322=0x7f060010;
+        public static final int comp333=0x7f060011;
+        public static final int comp380=0x7f060012;
+        public static final int comp490=0x7f060013;
+        public static final int comp491L=0x7f060014;
+        public static final int dummy_button=0x7f060015;
+        public static final int dummy_content=0x7f060016;
+        public static final int freshman=0x7f060017;
+        public static final int hello_blank_fragment=0x7f060018;
+        public static final int labscience=0x7f060019;
+        public static final int math102=0x7f06001a;
+        public static final int math104=0x7f06001b;
+        public static final int math150A=0x7f06001c;
+        public static final int math150B=0x7f06001d;
+        public static final int math262=0x7f06001e;
+        public static final int math341=0x7f06001f;
+        public static final int math482=0x7f060020;
+        public static final int navigation_drawer_close=0x7f060021;
+        public static final int navigation_drawer_open=0x7f060022;
+        public static final int new_student=0x7f060023;
+        public static final int phil230=0x7f060024;
+        public static final int select_past_courses=0x7f060025;
+        public static final int senelect=0x7f060026;
+        public static final int title_activity_incoming_student=0x7f060027;
+        public static final int title_activity_main=0x7f060028;
+        public static final int title_activity_mainactivity=0x7f060029;
+        public static final int transfer=0x7f06002a;
     }
     public static final class style {
         /** 

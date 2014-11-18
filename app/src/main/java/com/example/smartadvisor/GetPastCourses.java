@@ -3,6 +3,8 @@ package com.example.smartadvisor;
 
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,9 +25,9 @@ public class GetPastCourses extends Fragment {
 
     ArrayList<Course> past;
 
+
     public GetPastCourses() {
         // Required empty public constructor
-        past = new ArrayList<Course>();
     }
 
 
@@ -34,18 +36,22 @@ public class GetPastCourses extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_get_past_courses, container, false);
-        onCheckboxClicked(rootview);
+        past = new ArrayList<Course>();
         final Button done = (Button) rootview.findViewById(R.id.done);
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                PlanFragment makePlan = new PlanFragment();
+                ft.add(R.id.container, makePlan);
+                ft.commit();
             }
         });
         return rootview;
     }
 
-    public void onCheckboxClicked(View view) {
+    /*public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
         CourseChart courseChart = new CourseChart();
@@ -104,7 +110,7 @@ public class GetPastCourses extends Fragment {
                     past.add(courseChart.getCourse("Phil 230"));
                 break;
         }
-    }
+    }*/
 
 
 }

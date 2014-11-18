@@ -2,7 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.smartadvisor.GetPastCourses">
+    tools:context="com.example.smartadvisor.GetPastCourses"
+    android:id="@+id/fragment_get_past_courses"
+    android:background="@color/white">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -113,6 +115,13 @@
                 android:text="@string/phil230"
                 android:textSize="20dp"
                 android:onClick="onCheckBoxClicked"/>
+            <CheckBox android:id="@+id/noclasses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Classes Yet"
+                android:textSize="20dp"
+                android:onClick="onCheckBoxClicked"
+                android:layout_gravity="right"/>
         </TableRow>
     <Button
         android:id="@+id/done"

@@ -2,6 +2,8 @@ package com.example.smartadvisor;
 
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+//TODO: find a way to share data between fragment and activity!
 /**
  * A simple {@link Fragment} subclass.
  *
@@ -22,10 +24,8 @@ import android.widget.Toast;
 public class BlankFragment extends Fragment {
 
     String type;
-
     public BlankFragment() {
         // Required empty public constructor
-
     }
 
 
@@ -35,23 +35,17 @@ public class BlankFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fragment_incoming_student, container, false);
 
-        final RadioGroup group = (RadioGroup) rootView.findViewById(R.id.student_group);
         final Button btnDisplay = (Button) rootView.findViewById(R.id.btnDisplay);
         btnDisplay.setOnClickListener(new View.OnClickListener() {
-        RadioButton studtype;
             @Override
             public void onClick(View v) {
+                FragmentManager fm = getFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                GetPastCourses get = new GetPastCourses();
+                ft.add(R.id.container, get);
+                ft.addToBackStack(null);
+                ft.commit();
 
-                // get selected radio button from radioGroup
-                int selectedId = group.getCheckedRadioButtonId();
-
-                // find the radiobutton by returned id
-                studtype = (RadioButton) rootView.findViewById(selectedId);
-
-                Toast.makeText(getActivity(),
-                        studtype.getText(), Toast.LENGTH_SHORT).show();
-
-                type = studtype.toString();
             }
 
         });
