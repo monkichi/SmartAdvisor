@@ -41,76 +41,13 @@ public class GetPastCourses extends Fragment {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
+                FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
                 PlanFragment makePlan = new PlanFragment();
-                ft.add(R.id.container, makePlan);
+                makePlan.setPast(past);
+                ft.replace(R.id.container, makePlan);
                 ft.commit();
             }
         });
         return rootview;
     }
-
-    /*public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        CourseChart courseChart = new CourseChart();
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.comp108check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 180"));
-                break;
-            case R.id.comp110check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 110/L"));
-                break;
-            case R.id.comp122check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 122/L"));
-                break;
-            case R.id.comp182check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 182/L"));
-                break;
-            case R.id.comp222check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 222"));
-                break;
-            case R.id.comp256_Lcheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 256/L"));
-                break;
-            case R.id.comp282check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 282"));
-                break;
-            case R.id.math102check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 102"));
-                break;
-            case R.id.math104check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 104"));
-                break;
-            case R.id.math150Acheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 150A"));
-                break;
-            case R.id.math150Bcheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 150B"));
-                break;
-            case R.id.math262check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 262"));
-                break;
-            case R.id.phil230check:
-                if (checked)
-                    past.add(courseChart.getCourse("Phil 230"));
-                break;
-        }
-    }*/
-
-
 }

@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -30,7 +31,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//TODO: pass past courses to plan fragment. then calculate plan to graduation inside plan fragment
 public class Main extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -42,8 +43,10 @@ public class Main extends Activity
 
     //variables for other purposes (data storage, info about student classes, etc)
     String filename = "future_plan_data";
+    String sharedname = "future";
     List<List<Course>> plan;
     ArrayList<Course> past;
+    SharedPreferences shared;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -64,6 +67,16 @@ public class Main extends Activity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         fileopen();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+
+        SharedPreferences shared = getSharedPreferences(sharedname, 0);
+        SharedPreferences.Editor editor = shared.edit();
+
+        // create hash set for each semester. load classes for semester into set then pass to shared preferences
     }
 
     public void fileopen(){
