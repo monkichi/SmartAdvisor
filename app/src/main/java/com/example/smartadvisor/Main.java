@@ -44,7 +44,6 @@ public class Main extends Activity
     //variables for other purposes (data storage, info about student classes, etc)
     String filename = "future_plan_data";
     String sharedname = "future";
-    List<List<Course>> plan;
     ArrayList<Course> past;
     SharedPreferences shared;
     /**
@@ -79,21 +78,26 @@ public class Main extends Activity
         // create hash set for each semester. load classes for semester into set then pass to shared preferences
     }
 
-    public void fileopen(){
-        try{
+    public void fileopen() {
+        // maybe check to see if getting info from set preferences returns null. if so then get info. if now then go to plan fragment
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        SharedPreferences shared = getSharedPreferences(sharedname, 0);
+        if (shared.getString("type", null) != null) {
+            PlanFragment planFragment = new PlanFragment();
+            ft.replace(R.id.container, planFragment);
+            ft.commit();
+        } else {
+            BlankFragment blankFragment = new BlankFragment();
+            ft.add(R.id.container, blankFragment);
+            ft.commit();
+        }
+        /*try{
             FileInputStream filein = new FileInputStream(filename);
         }catch (FileNotFoundException f){
             File newfile = new File(filename);
             getNewStudentData();
-        }
-    }
-
-    public void getNewStudentData() {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        BlankFragment blankFragment = new BlankFragment();
-        ft.add(R.id.container, blankFragment);
-        ft.commit();
+        }*/
     }
 
     public void onRadioButtonClicked(View view){

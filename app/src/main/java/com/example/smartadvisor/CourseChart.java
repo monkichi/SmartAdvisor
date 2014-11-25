@@ -19,8 +19,8 @@ public class CourseChart {
         map.put(b.getName(), b);
         map.put(c.getName(), c);
 
-        addtomap(a.getName(),b.getName(),"Comp110");
-        addtomap("Math 102", "Math104");
+        addtomap(a.getName(),b.getName(),"Comp 110");
+        addtomap("Math 102", "Math 104");
         addtomap("Math 104", "Math 150A");
         addtomap("Math 150A", "Math 150B");
         addtomap("Math 150B", "Math 262");
