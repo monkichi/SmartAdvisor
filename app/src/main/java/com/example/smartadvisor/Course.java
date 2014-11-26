@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Course {
 
     private ArrayList<Course> prereqs;
+    public ArrayList<Course> next;
     private String name;
     private boolean elective;
 
@@ -13,6 +14,7 @@ public class Course {
         prereqs = p;
         name = n;
         elective = false;
+        next = new ArrayList<Course>();
     }
 
     public ArrayList<Course> getPrereqs(){

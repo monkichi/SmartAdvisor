@@ -31,11 +31,29 @@ public class PlanFragment extends Fragment {
     }
 
     public void makePlan(){
+        CourseChart temp = new CourseChart();
+        Semester s = new Semester("Spring 2015");
         if(past != null){
             //make plan based off past courses
+            ArrayList<Course> last = new ArrayList<Course>();
+            findLastCourseTaken(last, temp.getStarters());
         }else{
             //assume they are a freshman and do a regular plan
         }
+    }
+
+    public void findLastCourseTaken(ArrayList<Course> l, ArrayList<Course> n){
+        for(int i=0; i < n.size(); i++){
+            for(int j=0; j < n.get(i).next.size(); i++){
+                if(!past.contains(n.get(i).next.get(j))){
+
+                }
+            }
+        }
+    }
+
+    public void makePlan(String c, String c2){
+        boolean done = false;
     }
 
     @Override

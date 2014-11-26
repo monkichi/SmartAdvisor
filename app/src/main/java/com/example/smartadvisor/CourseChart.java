@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class CourseChart {
 
     HashMap<String,Course> map;
+    ArrayList<Course> starters;
 
     public CourseChart(){
+        starters = new ArrayList<Course>();
         map = new HashMap<String, Course>();
-
-        ArrayList<Course> p = new ArrayList<Course>();
         Course a = new Course(null, "Comp 108"),
                b = new Course(null, "Math 102"),
                c = new Course(null, "Phil 230");
@@ -37,11 +37,14 @@ public class CourseChart {
         addtomap("Comp 222", "Comp 322/L");
         addtomap("Comp 380/L", "Comp 490/L");
         addtomap("Comp 490/L", "Comp 491L");
+        starters.add(a);
+        starters.add(b);
     }
 
     public void addtomap(String p, String n){
         ArrayList<Course> pre = new ArrayList<Course>();
         pre.add(map.get(p));
+        map.get(p).next.add(new Course(pre,n));
         map.put(n, new Course(pre,n));
     }
 
@@ -49,6 +52,9 @@ public class CourseChart {
         ArrayList<Course> pre = new ArrayList<Course>();
         pre.add(map.get(p));
         pre.add(map.get(p2));
+        for(int i=0; i < pre.size(); i++){
+            map.get(pre.get(i)).next.add(new Course(pre,n));
+        }
         map.put(n, new Course(pre,n));
     }
 
@@ -57,8 +63,13 @@ public class CourseChart {
         pre.add(map.get(p));
         pre.add(map.get(p2));
         pre.add(map.get(p3));
+        for(int i=0; i < pre.size(); i++){
+            map.get(pre.get(i)).next.add(new Course(pre,n));
+        }
         map.put(n, new Course(pre,n));
     }
+
+    public ArrayList<Course> getStarters(){ return starters; }
 
     public Course getCourse(String n){
         return map.get(n);
