@@ -37,6 +37,7 @@ public class PlanFragment extends Fragment {
             //make plan based off past courses
             ArrayList<Course> last = new ArrayList<Course>();
             findLastCourseTaken(last, temp.getStarters());
+            makePlan(last);
         }else{
             //assume they are a freshman and do a regular plan
         }
@@ -46,14 +47,20 @@ public class PlanFragment extends Fragment {
         for(int i=0; i < n.size(); i++){
             for(int j=0; j < n.get(i).next.size(); i++){
                 if(!past.contains(n.get(i).next.get(j))){
-
+                    l.add(n.get(i));
                 }
             }
         }
     }
 
-    public void makePlan(String c, String c2){
-        boolean done = false;
+    public void makePlan(ArrayList<Course> l){
+        for(int i=0; i < l.size(); i++){
+            for(int j=0; j < l.get(i).next.size(); j++){
+                if(!past.contains(l.get(i).next.get(j))){
+
+                }
+            }
+        }
     }
 
     @Override

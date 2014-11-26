@@ -44,5 +44,8 @@
     <string name="freshman">Freshman</string>
     <string name="transfer">Transfer</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_next_semester">Please input the next semester.</string>
+    <string name="fall">Fall</string>
+    <string name="spring">Spring</string>
 
 </resources>
