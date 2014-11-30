@@ -83,14 +83,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/math104"
                 android:textSize="20dp"
-                android:onClick="onCheckBoxClicked"/>
+                android:onClick="onCheckboxClicked"/>
             <CheckBox android:id="@+id/math150Acheck"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/math150A"
                 android:textSize="20dp"
                 android:layout_gravity="right"
-                android:onClick="onCheckBoxClicked"/>
+                android:onClick="onCheckboxClicked"/>
 
         </TableRow>
         <TableRow>
@@ -99,14 +99,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/math150B"
                 android:textSize="20dp"
-                android:onClick="onCheckBoxClicked"/>
+                android:onClick="onCheckboxClicked"/>
             <CheckBox android:id="@+id/math262check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/math262"
                 android:textSize="20dp"
                 android:layout_gravity="right"
-                android:onClick="onCheckBoxClicked"/>
+                android:onClick="onCheckboxClicked"/>
         </TableRow>
         <TableRow>
             <CheckBox android:id="@+id/phil230check"
@@ -114,13 +114,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/phil230"
                 android:textSize="20dp"
-                android:onClick="onCheckBoxClicked"/>
+                android:onClick="onCheckboxClicked"/>
             <CheckBox android:id="@+id/noclasses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No Classes Yet"
                 android:textSize="20dp"
-                android:onClick="onCheckBoxClicked"
+                android:onClick="onCheckboxClicked"
                 android:layout_gravity="right"/>
         </TableRow>
     <Button

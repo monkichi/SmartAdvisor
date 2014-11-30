@@ -5,6 +5,7 @@
     <string name="current_semester">current</string>
     <string name="number_semesters">number of semesters</string>
     <string name="planmade">planmade</string>
+    <string name="type">type</string>
 
     <string name="app_name">Smart Advisor</string>
     <string name="dummy_button">Dummy Button</string>

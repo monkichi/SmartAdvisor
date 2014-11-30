@@ -37,7 +37,7 @@ public class PlanFragment extends Fragment {
 
     public PlanFragment(){
         past = null;
-        plan = null;
+        plan = new ArrayList<Semester>();
         courseChart = new CourseChart();
         w = new ArrayList<String>();
     }
@@ -68,7 +68,7 @@ public class PlanFragment extends Fragment {
 
     public void findLastCourseTaken(ArrayList<Course> l, ArrayList<Course> n){
         for(int i=0; i < n.size(); i++){
-            for(int j=0; j < n.get(i).next.size(); i++){
+            for(int j=0; j < n.get(i).next.size(); j++){
                 if(!past.contains(n.get(i).next.get(j))){
                     l.add(n.get(i));
                 }
@@ -78,32 +78,80 @@ public class PlanFragment extends Fragment {
 
     public void makePlan(ArrayList<Course> l, int num, String sem, int y){
         Semester s;
-        for(int i=0; i < l.size(); i++){
-            Course curr = l.get(i);
-            if(curr.next.size() != 0) {
-                if (sem.equalsIgnoreCase("Fall")) {
-                    sem = "Spring";
-                    y++;
-                    w.add(sem + year);
-                    s = new Semester(sem + (y + 1));
+        Course curr;
+        ArrayList<Course> temp = new ArrayList<Course>();
+        temp = l;
+        boolean done = false;
+        while(!done) {
+            int next = 0;
+            if (sem.equalsIgnoreCase("Fall")) {
+                sem = "Spring";
+                y++;
+                String t = sem;
+                t.concat(String.valueOf(y));
+                w.add(t);
+                s = new Semester(sem.concat(String.valueOf(y)));
+            } else {
+                sem = "Fall";
+                String t = sem;
+                t.concat(String.valueOf(y));
+                w.add(t);
+                s = new Semester(sem.concat(String.valueOf(y)));
+            }
+            for (int i = 0; i < temp.size(); i++) {
+                curr = temp.get(i);
+                if(curr.next.size() != 0)
+                    next++;
+                for(int j=0; j < curr.next.size(); j++){
+                    for(int k=0; k < curr.next.get(j).getPrereqs().size(); k++){
+                        if(!past.contains(curr.next.get(j).getPrereqs().get(k)))
+                            s.courses.add(curr.next.get(j).getPrereqs().get(k));
+                    }
+                    if(s.courses.size() == 0)
+                        s.courses.add(curr.next.get(j));
                 }
-                else {
-                    sem = "Fall";
-                    w.add(sem + y);
-                    s = new Semester(sem + y);
-                }
-                for (int k = 0; k < curr.next.size(); k++) {
-                    for (int f = 0; f < curr.next.get(k).getPrereqs().size(); f++) {
-                        if (!past.contains(curr.next.get(k).getPrereqs().get(f))) {
-                            s.courses.add(curr.next.get(k).getPrereqs().get(f));
+            }
+            plan.add(s);
+            if(next == 0)
+                done = true;
+            temp = s.courses;
+        }
+        /*if(l.size() != 0) {
+            for (int i = 0; i < l.size(); i++) {
+                Course curr = l.get(i);
+                if (curr.next.size() != 0) {
+                    if (sem.equalsIgnoreCase("Fall")) {
+                        sem = "Spring";
+                        y++;
+                        String t = sem;
+                        t.concat(String.valueOf(y));
+                        w.add(t);
+                        s = new Semester(sem.concat(String.valueOf(y)));
+                    } else {
+                        sem = "Fall";
+                        String t = sem;
+                        t.concat(String.valueOf(y));
+                        w.add(t);
+                        s = new Semester(sem.concat(String.valueOf(y)));
+                    }
+                    for (int k = 0; k < curr.next.size(); k++) {
+                        for (int f = 0; f < curr.next.get(k).getPrereqs().size(); f++) {
+                            if (!past.contains(curr.next.get(k).getPrereqs().get(f))) {
+                                s.courses.add(curr.next.get(k).getPrereqs().get(f));
+                            }
                         }
                     }
+                    plan.add(s);
                 }
-                plan.add(s);
             }
         }
-        if(plan.get(l.size()-1).courses.size() != 0){
-            makePlan(plan.get(l.size()-1).courses, num + 1, sem, year);
+        if(plan.get(plan.size()-1).courses.size() != 0){ //something is wrong with this if.
+            for(int i=0; i < plan.get(plan.size()-1).courses.size(); i++) {
+                if(plan.get(plan.size()-1).courses.get(i).next.size() != 0) {
+                    makePlan(plan.get(plan.size() - 1).courses, num + 1, sem, y);
+                    break;
+                }
+            }
         }else{
             planmade = true;
             numsemesters = plan.size();
@@ -112,7 +160,7 @@ public class PlanFragment extends Fragment {
                 web[i] = w.get(i);
             }
             storeResults();
-        }
+        }*/
     }
 
     public void storeResults(){

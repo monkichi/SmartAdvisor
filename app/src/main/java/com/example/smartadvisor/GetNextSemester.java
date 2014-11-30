@@ -3,6 +3,8 @@ package com.example.smartadvisor;
 
 
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -57,6 +59,9 @@ public class GetNextSemester extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
                 PlanFragment plan = new PlanFragment();
+                SharedPreferences shared = getActivity().getPreferences(Context.MODE_PRIVATE);
+                String type = shared.getString(getString(R.string.type), "Spring");
+                plan.setCurrsem(type,year);
                 plan.setPast(past);
                 ft.replace(R.id.container, plan);
                 ft.commit();

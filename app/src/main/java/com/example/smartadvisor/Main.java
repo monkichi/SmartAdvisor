@@ -89,6 +89,7 @@ public class Main extends Activity
         editor.putInt(getString(year), year);
         editor.putString(semester, semester);
         editor.putString(type,type);
+        editor.commit();
     }
 
     public void checknewuser() {
@@ -96,7 +97,8 @@ public class Main extends Activity
         FragmentTransaction ft = fm.beginTransaction();
         SharedPreferences shared = getPreferences(Context.MODE_PRIVATE);
         planmade = shared.getBoolean(getString(R.string.planmade), false);
-        if (planmade) {
+        type = shared.getString(getString(R.string.type), null);
+        if (type != null) {
             PlanFragment planFragment = new PlanFragment();
             ft.replace(R.id.container, planFragment);
             ft.commit();
@@ -119,6 +121,10 @@ public class Main extends Activity
                     type = "transfer";
                 break;
         }
+        SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
+        SharedPreferences.Editor editor = shared.edit();
+        editor.putString(getString(R.string.type), type);
+        editor.commit();
     }
 
     public void onSemesterRadioClicked(View view){
@@ -165,50 +171,76 @@ public class Main extends Activity
             case R.id.comp110check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 110/L"));
+                else
+                    past.remove(courseChart.getCourse("Comp 110/L"));
                 break;
             case R.id.comp122check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 122/L"));
+                else
+                    past.remove(courseChart.getCourse("Comp 122/L"));
                 break;
             case R.id.comp182check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 182/L"));
+                else
+                    past.remove(courseChart.getCourse("Comp 182/L"));
                 break;
             case R.id.comp222check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 222"));
+                else
+                    past.remove(courseChart.getCourse("Comp 222"));
                 break;
             case R.id.comp256_Lcheck:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 256/L"));
+                else
+                    past.remove(courseChart.getCourse("Comp 256/L"));
                 break;
             case R.id.comp282check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 282"));
+                else
+                    past.remove(courseChart.getCourse("Comp 282"));
                 break;
             case R.id.math102check:
                 if (checked)
                     past.add(courseChart.getCourse("Math 102"));
+                else
+                    past.remove(courseChart.getCourse("Math 102"));
                 break;
             case R.id.math104check:
                 if (checked)
                     past.add(courseChart.getCourse("Math 104"));
+                else
+                    past.remove(courseChart.getCourse("Math 104"));
                 break;
             case R.id.math150Acheck:
                 if (checked)
                     past.add(courseChart.getCourse("Math 150A"));
+                else
+                    past.remove(courseChart.getCourse("Math 150A"));
                 break;
             case R.id.math150Bcheck:
                 if (checked)
                     past.add(courseChart.getCourse("Math 150B"));
+                else
+                    past.remove(courseChart.getCourse("Math 150B"));
                 break;
             case R.id.math262check:
                 if (checked)
                     past.add(courseChart.getCourse("Math 262"));
+                else
+                    past.remove(courseChart.getCourse("Math 262"));
                 break;
             case R.id.phil230check:
                 if (checked)
                     past.add(courseChart.getCourse("Phil 230"));
+                else
+                    past.remove(courseChart.getCourse("Phil 230"));
+                break;
+            case R.id.noclasses:
                 break;
         }
     }

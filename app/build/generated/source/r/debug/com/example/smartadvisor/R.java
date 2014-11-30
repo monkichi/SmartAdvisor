@@ -146,6 +146,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_main=0x7f06002f;
         public static final int title_activity_mainactivity=0x7f060030;
         public static final int transfer=0x7f060031;
+        public static final int type=0x7f060032;
     }
     public static final class style {
         /** 

@@ -8,6 +8,7 @@ public class Semester {
 
     public Semester(String n){
         name = n;
+        courses = new ArrayList<Course>();
     }
 
     public String getName(){return name;}
