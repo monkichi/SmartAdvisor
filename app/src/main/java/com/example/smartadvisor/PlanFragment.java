@@ -77,12 +77,12 @@ public class PlanFragment extends Fragment {
     }
 
     public void makePlan(ArrayList<Course> l, int num, String sem, int y){
-        Semester s;
         Course curr;
         ArrayList<Course> temp = new ArrayList<Course>();
         temp = l;
         boolean done = false;
         while(!done) {
+            Semester s;
             int next = 0;
             if (sem.equalsIgnoreCase("Fall")) {
                 sem = "Spring";
@@ -90,13 +90,13 @@ public class PlanFragment extends Fragment {
                 String t = sem;
                 t.concat(String.valueOf(y));
                 w.add(t);
-                s = new Semester(sem.concat(String.valueOf(y)));
+                s = new Semester(t);
             } else {
                 sem = "Fall";
                 String t = sem;
                 t.concat(String.valueOf(y));
                 w.add(t);
-                s = new Semester(sem.concat(String.valueOf(y)));
+                s = new Semester(t);
             }
             for (int i = 0; i < temp.size(); i++) {
                 curr = temp.get(i);
