@@ -42,9 +42,9 @@ public class GetPastCourses extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-                PlanFragment makePlan = new PlanFragment();
-                makePlan.setPast(past);
-                ft.replace(R.id.container, makePlan);
+                GetNextSemester nextSem = new GetNextSemester();
+                nextSem.setPast(past);
+                ft.replace(R.id.container, nextSem);
                 ft.commit();
             }
         });

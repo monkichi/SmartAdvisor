@@ -28,9 +28,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.smartadvisor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce7265db-5a47-411b-aef0-835c63707e6f" name="Default" comment="started a recursive approach to making the plan.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml" />
+    <list default="true" id="ce7265db-5a47-411b-aef0-835c63707e6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/smartadvisor/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/smartadvisor/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -60,11 +68,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4318">
-              <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+            <state vertical-scroll-proportion="-3.1616437" vertical-offset="1817" max-vertical-offset="4930">
+              <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+              <folding>
+                <element signature="e#2328#2354#0" expanded="true" />
+                <element signature="e#2570#2578#0" expanded="true" />
+                <element signature="e#3104#3132#0" expanded="true" />
+                <element signature="e#7622#7646#0" expanded="true" />
+                <element signature="e#7716#7740#0" expanded="true" />
+                <element signature="e#7810#7840#0" expanded="true" />
+                <element signature="e#7910#7938#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseChart.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1394">
+              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -73,19 +99,14 @@
       <file leaf-file-name="GetNextSemester.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="646">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Semester.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="1054">
+              <caret line="49" column="40" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="40" />
+              <folding>
+                <element signature="e#763#764#0" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#1478#1861#0" expanded="true" />
+                <element signature="e#1850#1851#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,31 +114,93 @@
       <file leaf-file-name="Course.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Course.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="561">
+            <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="561">
               <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseChart.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java">
+      <file leaf-file-name="fragment_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1360">
-              <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+            <state vertical-scroll-proportion="-0.6296296" vertical-offset="153" max-vertical-offset="595">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlanFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3438202" vertical-offset="561" max-vertical-offset="1241">
-              <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1952" max-vertical-offset="2941">
+              <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
               <folding>
-                <element signature="e#881#889#0" expanded="true" />
+                <element signature="e#1413#1421#0" expanded="true" />
+                <element signature="e#3523#3549#0" expanded="true" />
+                <element signature="e#3719#3727#0" expanded="true" />
+                <element signature="e#3774#3782#0" expanded="true" />
+                <element signature="e#4105#4133#0" expanded="true" />
+                <element signature="e#4168#4204#0" expanded="true" />
+                <element signature="e#4407#4435#0" expanded="true" />
+                <element signature="e#4482#4518#0" expanded="true" />
+                <element signature="e#4559#4595#0" expanded="true" />
+                <element signature="e#4718#4726#0" expanded="true" />
+                <element signature="e#4773#4781#0" expanded="true" />
+                <element signature="e#5865#6191#0" expanded="true" />
+                <element signature="e#6180#6181#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.037037" vertical-offset="0" max-vertical-offset="425">
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomGrid.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="541" max-vertical-offset="986">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="167" max-vertical-offset="884">
+              <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
+              <folding>
+                <element signature="e#1493#1494#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetPastCourses.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="748">
+              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -840,15 +923,17 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_get_past_courses.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java" />
       </list>
     </option>
   </component>
@@ -1328,7 +1413,11 @@
       <created>1417032804925</created>
       <updated>1417032804925</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="created a fragment to get next semester">
+      <created>1417045249359</created>
+      <updated>1417045249359</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1368,7 +1457,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24281392" sideWeight="0.50079745" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24561404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37320575" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1417,30 +1506,13 @@
     <MESSAGE value="added semester class for the home activity." />
     <MESSAGE value="just a few edits on the course chart. changed file open for home activity" />
     <MESSAGE value="started a recursive approach to making the plan." />
-    <option name="LAST_COMMIT_MESSAGE" value="started a recursive approach to making the plan." />
+    <MESSAGE value="created a fragment to get next semester" />
+    <option name="LAST_COMMIT_MESSAGE" value="created a fragment to get next semester" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2584">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="374">
-          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="204">
@@ -1467,7 +1539,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2328#2354#0" expanded="true" />
+            <element signature="e#2570#2578#0" expanded="true" />
+            <element signature="e#3104#3132#0" expanded="true" />
+            <element signature="e#7622#7646#0" expanded="true" />
+            <element signature="e#7716#7740#0" expanded="true" />
+            <element signature="e#7810#7840#0" expanded="true" />
+            <element signature="e#7910#7938#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1718,46 +1798,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_incoming_student.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04644809" vertical-offset="153" max-vertical-offset="595">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="4318">
-          <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.3660287" vertical-offset="391" max-vertical-offset="1037">
+          <caret line="32" column="47" selection-start-line="24" selection-start-column="3" selection-end-line="41" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1146067" vertical-offset="65" max-vertical-offset="748">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.38202247" vertical-offset="0" max-vertical-offset="445">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1054">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.703704" vertical-offset="544" max-vertical-offset="1105">
+          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+          <folding>
+            <element signature="e#353#382#0" expanded="true" />
+            <element signature="e#955#969#0" expanded="true" />
+            <element signature="e#1209#1225#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46516854" vertical-offset="235" max-vertical-offset="884">
+        <state vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="884">
           <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
           <folding>
-            <element signature="e#1493#1494#0" expanded="false" />
+            <element signature="e#1493#1494#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1360">
-          <caret line="71" column="61" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="748">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1952" max-vertical-offset="2941">
+          <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
+          <folding>
+            <element signature="e#1413#1421#0" expanded="true" />
+            <element signature="e#3523#3549#0" expanded="true" />
+            <element signature="e#3719#3727#0" expanded="true" />
+            <element signature="e#3774#3782#0" expanded="true" />
+            <element signature="e#4105#4133#0" expanded="true" />
+            <element signature="e#4168#4204#0" expanded="true" />
+            <element signature="e#4407#4435#0" expanded="true" />
+            <element signature="e#4482#4518#0" expanded="true" />
+            <element signature="e#4559#4595#0" expanded="true" />
+            <element signature="e#4718#4726#0" expanded="true" />
+            <element signature="e#4773#4781#0" expanded="true" />
+            <element signature="e#5865#6191#0" expanded="true" />
+            <element signature="e#6180#6181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="541" max-vertical-offset="986">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.037037" vertical-offset="0" max-vertical-offset="425">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6296296" vertical-offset="153" max-vertical-offset="595">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1770,62 +1920,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="969">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_incoming_student.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3660287" vertical-offset="391" max-vertical-offset="1037">
-          <caret line="32" column="47" selection-start-line="24" selection-start-column="3" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26794258" vertical-offset="449" max-vertical-offset="867">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1054">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="40" />
           <folding>
-            <element signature="e#353#382#0" expanded="true" />
-            <element signature="e#955#969#0" expanded="true" />
-            <element signature="e#1209#1225#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#1478#1861#0" expanded="true" />
+            <element signature="e#1850#1851#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1394">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3438202" vertical-offset="561" max-vertical-offset="1241">
-          <caret line="55" column="46" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+        <state vertical-scroll-proportion="-3.1616437" vertical-offset="1817" max-vertical-offset="4930">
+          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
           <folding>
-            <element signature="e#881#889#0" expanded="true" />
+            <element signature="e#2328#2354#0" expanded="true" />
+            <element signature="e#2570#2578#0" expanded="true" />
+            <element signature="e#3104#3132#0" expanded="true" />
+            <element signature="e#7622#7646#0" expanded="true" />
+            <element signature="e#7716#7740#0" expanded="true" />
+            <element signature="e#7810#7840#0" expanded="true" />
+            <element signature="e#7910#7938#0" expanded="true" />
           </folding>
         </state>
       </provider>

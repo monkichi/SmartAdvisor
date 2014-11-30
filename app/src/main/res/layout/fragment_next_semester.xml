@@ -29,14 +29,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/spring"
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:onClick="onSemesterRadioClicked"/>
     </RadioGroup>
-    <NumberPicker
-        android:id="@+id/get_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    </LinearLayout>
+        <RadioGroup
+            android:id="@+id/get_year"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/curr_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:onClick="onYearRadioClicked"/>
+            <RadioButton
+                android:id="@+id/next_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:onClick="onYearRadioClicked"/>
+        </RadioGroup>
+        </LinearLayout>
     <Button
+        android:id="@+id/next_semester_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"

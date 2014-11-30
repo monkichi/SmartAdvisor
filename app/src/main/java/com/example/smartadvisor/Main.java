@@ -29,9 +29,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashSet;
 import java.util.List;
 
-//TODO: pass past courses to plan fragment. then calculate plan to graduation inside plan fragment
+
 public class Main extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -42,10 +44,11 @@ public class Main extends Activity
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     //variables for other purposes (data storage, info about student classes, etc)
-    String filename = "future_plan_data";
-    String sharedname = "future";
     ArrayList<Course> past;
-    SharedPreferences shared;
+    CourseChart c = new CourseChart();
+    String semester;
+    int year;
+    boolean planmade;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -65,25 +68,35 @@ public class Main extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        fileopen();
+        past = new ArrayList<Course>();
+
+        checknewuser();
     }
 
     @Override
     public void onStop(){
         super.onStop();
 
-        SharedPreferences shared = getSharedPreferences(sharedname, 0);
+        SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
         SharedPreferences.Editor editor = shared.edit();
 
         // create hash set for each semester. load classes for semester into set then pass to shared preferences
+        HashSet<String> p = new HashSet<String>();
+        for(int i=0; i < past.size(); i++){
+            p.add(past.get(i).getName());
+        }
+        editor.putStringSet("past", p);
+        editor.putInt(getString(year), year);
+        editor.putString(semester, semester);
+        editor.putString(type,type);
     }
 
-    public void fileopen() {
-        // maybe check to see if getting info from set preferences returns null. if so then get info. if now then go to plan fragment
+    public void checknewuser() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        SharedPreferences shared = getSharedPreferences(sharedname, 0);
-        if (shared.getString("type", null) != null) {
+        SharedPreferences shared = getPreferences(Context.MODE_PRIVATE);
+        planmade = shared.getBoolean(getString(R.string.planmade), false);
+        if (planmade) {
             PlanFragment planFragment = new PlanFragment();
             ft.replace(R.id.container, planFragment);
             ft.commit();
@@ -92,12 +105,6 @@ public class Main extends Activity
             ft.add(R.id.container, blankFragment);
             ft.commit();
         }
-        /*try{
-            FileInputStream filein = new FileInputStream(filename);
-        }catch (FileNotFoundException f){
-            File newfile = new File(filename);
-            getNewStudentData();
-        }*/
     }
 
     public void onRadioButtonClicked(View view){
@@ -114,6 +121,35 @@ public class Main extends Activity
         }
     }
 
+    public void onSemesterRadioClicked(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()){
+            case R.id.get_Fall:
+                if(checked)
+                    semester = "Fall";
+                break;
+            case R.id.get_Spring:
+                if(checked)
+                    semester = "Spring";
+                break;
+        }
+    }
+
+    public void onYearRadioClicked(View view){
+        boolean checked = ((RadioButton) view).isChecked();
+        Calendar c = Calendar.getInstance();
+        switch (view.getId()){
+            case R.id.curr_year:
+                if(checked)
+                    year = c.get(Calendar.YEAR);
+                break;
+            case R.id.next_year:
+                if(checked)
+                    year = c.get(Calendar.YEAR) + 1;
+                break;
+        }
+    }
+
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -122,7 +158,9 @@ public class Main extends Activity
         switch(view.getId()) {
             case R.id.comp108check:
                 if (checked)
-                    past.add(courseChart.getCourse("Comp 180"));
+                    past.add(courseChart.getCourse("Comp 108"));
+                else
+                    past.remove(courseChart.getCourse("Comp 108"));
                 break;
             case R.id.comp110check:
                 if (checked)

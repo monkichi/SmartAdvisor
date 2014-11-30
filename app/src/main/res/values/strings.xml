@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="future">future</string>
+    <string name="current_semester">current</string>
+    <string name="number_semesters">number of semesters</string>
+    <string name="planmade">planmade</string>
+
     <string name="app_name">Smart Advisor</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

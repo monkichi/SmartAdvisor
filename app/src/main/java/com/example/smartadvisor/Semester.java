@@ -9,4 +9,6 @@ public class Semester {
     public Semester(String n){
         name = n;
     }
+
+    public String getName(){return name;}
 }
