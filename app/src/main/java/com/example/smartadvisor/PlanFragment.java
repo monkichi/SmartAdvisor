@@ -34,6 +34,7 @@ public class PlanFragment extends Fragment {
     private ArrayList<String> w;
     private int numsemesters;
     private boolean planmade;
+    View rootview;
 
     public PlanFragment(){
         past = null;
@@ -57,12 +58,12 @@ public class PlanFragment extends Fragment {
         String sem = currsem;
         int y = year;
         ArrayList<Course> last = new ArrayList<Course>();
-        if(past != null){
+        if(past.size() > 0){
             //make plan based off past courses
             findLastCourseTaken(last, temp.getStarters());
-            makePlan(last, 0, sem, y);
+            makePlan(last, sem, y);
         }else{
-            makePlan(courseChart.getStarters(), 0, sem, y);
+            makePlan(courseChart.getStarters(), sem, y);
         }
     }
 
@@ -76,91 +77,66 @@ public class PlanFragment extends Fragment {
         }
     }
 
-    public void makePlan(ArrayList<Course> l, int num, String sem, int y){
+    public ArrayList<Course> findNextCourses(ArrayList<Course> l){
+        // this method assumes l is the current list of classes for that semester
+        ArrayList<Course> n = new ArrayList<Course>();
+        for(int i=0; i < l.size(); i++){ // for each class in this semester
+            if(l.get(i).next.size() > 0) { // is there a class after this?
+                Course curr = l.get(i);
+                for (int j = 0; j < curr.next.size(); j++) { // for all that the classes this is a direct prereq for
+                    //make sure you have all the prereqs for the next class
+                    for(int k=0; k < curr.next.get(j).getPrereqs().size(); k++){
+                        //if it doesn't have all prereqs
+                        if(!l.contains(curr.next.get(j).getPrereqs().get(k))) {
+                            //add it to the current semester if it doesn't exist in the past classes
+                            if (!past.contains(curr.next.get(j).getPrereqs().get(k)))
+                                l.add(curr.next.get(j).getPrereqs().get(k));
+                            else //add it to the next semester if it is in the past
+                                n.add(curr.next.get(j).getPrereqs().get(k));
+                        }
+                        else // if it does have all necessary prereqs then add this class
+                            n.add(curr.next.get(j));
+                    }
+                }
+            }
+        }
+
+        return n;
+    }
+
+    public void makePlan(ArrayList<Course> l, String sem, int y){
         Course curr;
         ArrayList<Course> temp = new ArrayList<Course>();
         temp = l;
         boolean done = false;
         while(!done) {
             Semester s;
-            int next = 0;
-            if (sem.equalsIgnoreCase("Fall")) {
-                sem = "Spring";
+            if (sem.equalsIgnoreCase("Fall ")) {
+                sem = "Spring ";
                 y++;
                 String t = sem;
-                t.concat(String.valueOf(y));
+                t = t.concat(String.valueOf(y));
                 w.add(t);
                 s = new Semester(t);
             } else {
-                sem = "Fall";
+                sem = "Fall ";
                 String t = sem;
-                t.concat(String.valueOf(y));
+                t = t.concat(String.valueOf(y));
                 w.add(t);
                 s = new Semester(t);
             }
-            for (int i = 0; i < temp.size(); i++) {
-                curr = temp.get(i);
-                if(curr.next.size() != 0)
-                    next++;
-                for(int j=0; j < curr.next.size(); j++){
-                    for(int k=0; k < curr.next.get(j).getPrereqs().size(); k++){
-                        if(!past.contains(curr.next.get(j).getPrereqs().get(k)))
-                            s.courses.add(curr.next.get(j).getPrereqs().get(k));
-                    }
-                    if(s.courses.size() == 0)
-                        s.courses.add(curr.next.get(j));
-                }
-            }
-            plan.add(s);
-            if(next == 0)
+            s.courses = findNextCourses(temp);
+            if(s.courses.size() > 0) {
+                plan.add(s);
+                temp = s.courses;
+            }else {
                 done = true;
-            temp = s.courses;
-        }
-        /*if(l.size() != 0) {
-            for (int i = 0; i < l.size(); i++) {
-                Course curr = l.get(i);
-                if (curr.next.size() != 0) {
-                    if (sem.equalsIgnoreCase("Fall")) {
-                        sem = "Spring";
-                        y++;
-                        String t = sem;
-                        t.concat(String.valueOf(y));
-                        w.add(t);
-                        s = new Semester(sem.concat(String.valueOf(y)));
-                    } else {
-                        sem = "Fall";
-                        String t = sem;
-                        t.concat(String.valueOf(y));
-                        w.add(t);
-                        s = new Semester(sem.concat(String.valueOf(y)));
-                    }
-                    for (int k = 0; k < curr.next.size(); k++) {
-                        for (int f = 0; f < curr.next.get(k).getPrereqs().size(); f++) {
-                            if (!past.contains(curr.next.get(k).getPrereqs().get(f))) {
-                                s.courses.add(curr.next.get(k).getPrereqs().get(f));
-                            }
-                        }
-                    }
-                    plan.add(s);
-                }
             }
         }
-        if(plan.get(plan.size()-1).courses.size() != 0){ //something is wrong with this if.
-            for(int i=0; i < plan.get(plan.size()-1).courses.size(); i++) {
-                if(plan.get(plan.size()-1).courses.get(i).next.size() != 0) {
-                    makePlan(plan.get(plan.size() - 1).courses, num + 1, sem, y);
-                    break;
-                }
-            }
-        }else{
-            planmade = true;
-            numsemesters = plan.size();
-            web = new String[w.size()];
-            for(int i=0; i < w.size(); i++){
-                web[i] = w.get(i);
-            }
-            storeResults();
-        }*/
+        web = new String[w.size()];
+        for(int i=0; i < web.length; i++){
+            web[i] = w.get(i);
+        }
     }
 
     public void storeResults(){
@@ -212,22 +188,18 @@ public class PlanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_main, container, false);
-
-        getResults();
+        rootview = inflater.inflate(R.layout.fragment_main, container, false);
         GridView grid;
         CustomGrid adapter = new CustomGrid(getActivity(), web, R.color.red);
-        grid=(GridView)rootview.findViewById(R.id.gridview);
+        grid=(GridView) rootview.findViewById(R.id.gridview);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(getActivity(), "You Clicked at " + web[+position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "You Clicked at " + web[position], Toast.LENGTH_SHORT).show();
             }
         });
-
-
         return rootview;
     }
 }

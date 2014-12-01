@@ -45,7 +45,6 @@ public class BlankFragment extends Fragment {
                 ft.add(R.id.container, get);
                 ft.addToBackStack(null);
                 ft.commit();
-
             }
 
         });

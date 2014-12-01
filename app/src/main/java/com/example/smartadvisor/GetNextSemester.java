@@ -60,7 +60,9 @@ public class GetNextSemester extends Fragment {
                 FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
                 PlanFragment plan = new PlanFragment();
                 SharedPreferences shared = getActivity().getPreferences(Context.MODE_PRIVATE);
-                String type = shared.getString(getString(R.string.type), "Spring");
+                String type = shared.getString(getString(R.string.type), "Spring ");
+                Calendar c = Calendar.getInstance();
+                year = shared.getInt(getString(R.string.year), (c.get(Calendar.YEAR) + 1));
                 plan.setCurrsem(type,year);
                 plan.setPast(past);
                 ft.replace(R.id.container, plan);

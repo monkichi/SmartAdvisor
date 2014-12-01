@@ -86,7 +86,7 @@ public class Main extends Activity
             p.add(past.get(i).getName());
         }
         editor.putStringSet("past", p);
-        editor.putInt(getString(year), year);
+        editor.putInt(getString(R.string.year), year);
         editor.putString(semester, semester);
         editor.putString(type,type);
         editor.commit();
@@ -100,6 +100,7 @@ public class Main extends Activity
         type = shared.getString(getString(R.string.type), null);
         if (type != null) {
             PlanFragment planFragment = new PlanFragment();
+            planFragment.getResults();
             ft.replace(R.id.container, planFragment);
             ft.commit();
         } else {
@@ -241,6 +242,7 @@ public class Main extends Activity
                     past.remove(courseChart.getCourse("Phil 230"));
                 break;
             case R.id.noclasses:
+                past.removeAll(past);
                 break;
         }
     }

@@ -53,7 +53,6 @@ public class CourseChart {
         pre.add(map.get(p));
         pre.add(map.get(p2));
         for(int i=0; i < pre.size(); i++){
-            map.get(pre.get(i).getName()).next = new ArrayList<Course>();
             map.get(pre.get(i).getName()).next.add(new Course(pre,n));
         }
         map.put(n, new Course(pre,n));
@@ -65,7 +64,6 @@ public class CourseChart {
         pre.add(map.get(p2));
         pre.add(map.get(p3));
         for(int i=0; i < pre.size(); i++){
-            map.get(pre.get(i).getName()).next = new ArrayList<Course>();
             map.get(pre.get(i).getName()).next.add(new Course(pre,n));
         }
         map.put(n, new Course(pre,n));
