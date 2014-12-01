@@ -29,18 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce7265db-5a47-411b-aef0-835c63707e6f" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\actbar.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\actbar2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\back.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\classviews.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\classviews2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\drawer_shadow.9.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\menu_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\src\main\res\drawable-hdpi\navdrawer.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/smartadvisor/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/smartadvisor/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SmartAdvisor.iws" />
@@ -72,9 +62,22 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="5508">
-              <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1615">
+              <caret line="86" column="9" selection-start-line="84" selection-start-column="8" selection-end-line="87" selection-end-column="39" />
+              <folding>
+                <element signature="method#onCreate#0;class#Main#0" expanded="false" />
+                <element signature="e#2740#2764#0" expanded="true" />
+                <element signature="method#checknewuser#0;class#Main#0" expanded="false" />
+                <element signature="method#onRadioButtonClicked#0;class#Main#0" expanded="false" />
+                <element signature="method#onYearRadioClicked#0;class#Main#0" expanded="false" />
+                <element signature="method#onCheckboxClicked#0;class#Main#0" expanded="false" />
+                <element signature="method#onNavigationDrawerItemSelected#0;class#Main#0" expanded="false" />
+                <element signature="method#onSectionAttached#0;class#Main#0" expanded="false" />
+                <element signature="method#restoreActionBar#0;class#Main#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#Main#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#Main#0" expanded="false" />
+                <element signature="class#PlaceholderFragment#0;class#Main#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,37 +85,41 @@
       <file leaf-file-name="BlankFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="867">
-              <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="510">
+              <caret line="33" column="51" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="55" />
               <folding>
-                <element signature="e#1090#1504#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
+                <element signature="method#BlankFragment#0;class#BlankFragment#0" expanded="false" />
+                <element signature="method#onCreateView#0;class#BlankFragment#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GetPastCourses.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3765281" vertical-offset="492" max-vertical-offset="918">
+              <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.7872863" vertical-offset="540" max-vertical-offset="3383">
-              <caret line="189" column="24" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1462">
+              <caret line="161" column="25" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="86" />
               <folding>
-                <element signature="e#1453#1461#0" expanded="true" />
-                <element signature="e#2238#2246#0" expanded="true" />
-                <element signature="e#3669#3677#0" expanded="true" />
-                <element signature="e#4684#4710#0" expanded="true" />
-                <element signature="e#4880#4888#0" expanded="true" />
-                <element signature="e#4935#4943#0" expanded="true" />
-                <element signature="e#5266#5294#0" expanded="true" />
-                <element signature="e#5329#5365#0" expanded="true" />
-                <element signature="e#5568#5596#0" expanded="true" />
-                <element signature="e#5643#5679#0" expanded="true" />
-                <element signature="e#5720#5756#0" expanded="true" />
-                <element signature="e#5879#5887#0" expanded="true" />
-                <element signature="e#5934#5942#0" expanded="true" />
-                <element signature="e#7102#7429#0" expanded="true" />
-                <element signature="e#7418#7419#0" expanded="true" />
+                <element signature="method#PlanFragment#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#setCurrsem#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#setPast#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#makePlan#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#findLastCourseTaken#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#findNextCourses#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#makePlan#1;class#PlanFragment#0" expanded="false" />
+                <element signature="method#storeResults#0;class#PlanFragment#0" expanded="false" />
+                <element signature="method#onPause#0;class#PlanFragment#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,11 +128,9 @@
       <file leaf-file-name="GetNextSemester.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1054">
+            <state vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="1054">
               <caret line="64" column="90" selection-start-line="64" selection-start-column="90" selection-end-line="64" selection-end-column="90" />
-              <folding>
-                <element signature="e#2067#2091#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,7 +148,7 @@
       <file leaf-file-name="CustomGrid.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+            <state vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1207">
               <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
               <folding />
             </state>
@@ -156,7 +161,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333" vertical-offset="102" max-vertical-offset="578">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="578">
               <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding />
             </state>
@@ -169,7 +174,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.148148" vertical-offset="0" max-vertical-offset="442">
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="442">
               <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
@@ -894,7 +899,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Course.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_get_past_courses.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_next_semester.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Semester.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CourseChart.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java" />
@@ -905,6 +909,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/CustomGrid.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java" />
       </list>
     </option>
   </component>
@@ -943,7 +948,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1146,8 +1152,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1212,6 +1217,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1237,19 +1255,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1434,7 +1439,11 @@
       <created>1417417651377</created>
       <updated>1417417651377</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="changed grid icon looks">
+      <created>1417419776800</created>
+      <updated>1417419776800</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1464,7 +1473,6 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32376397" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3184569" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1473,7 +1481,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24281392" sideWeight="0.50079745" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3030303" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32970452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1487,7 +1494,9 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3184569" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1528,7 +1537,8 @@
     <MESSAGE value="algorithm edits." />
     <MESSAGE value="algorithm edits. Algorithm won't terminate though" />
     <MESSAGE value="Everything works now. Algorithm only makes 2 semesters which needs to change." />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything works now. Algorithm only makes 2 semesters which needs to change." />
+    <MESSAGE value="changed grid icon looks" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed grid icon looks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1560,7 +1570,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#onCreate#0;class#Main#0" expanded="false" />
+            <element signature="e#2740#2764#0" expanded="true" />
+            <element signature="method#checknewuser#0;class#Main#0" expanded="false" />
+            <element signature="method#onRadioButtonClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onYearRadioClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onCheckboxClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onNavigationDrawerItemSelected#0;class#Main#0" expanded="false" />
+            <element signature="method#onSectionAttached#0;class#Main#0" expanded="false" />
+            <element signature="method#restoreActionBar#0;class#Main#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Main#0" expanded="false" />
+            <element signature="class#PlaceholderFragment#0;class#Main#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1838,7 +1861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3926097" vertical-offset="0" max-vertical-offset="433">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1846,14 +1868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="748">
-          <caret line="44" column="64" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -1866,30 +1880,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="5508">
-          <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1054">
-          <caret line="64" column="90" selection-start-line="64" selection-start-column="90" selection-end-line="64" selection-end-column="90" />
-          <folding>
-            <element signature="e#2067#2091#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_item.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.148148" vertical-offset="0" max-vertical-offset="442">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="442">
           <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding />
         </state>
@@ -1900,7 +1896,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333" vertical-offset="102" max-vertical-offset="578">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="578">
           <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
@@ -1922,38 +1918,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetNextSemester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1054">
+          <caret line="64" column="90" selection-start-line="64" selection-start-column="90" selection-end-line="64" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/BlankFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="867">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="510">
+          <caret line="33" column="51" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="55" />
           <folding>
-            <element signature="e#1090#1504#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="method#BlankFragment#0;class#BlankFragment#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#BlankFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="779" max-vertical-offset="1615">
+          <caret line="86" column="9" selection-start-line="84" selection-start-column="8" selection-end-line="87" selection-end-column="39" />
+          <folding>
+            <element signature="method#onCreate#0;class#Main#0" expanded="false" />
+            <element signature="e#2740#2764#0" expanded="true" />
+            <element signature="method#checknewuser#0;class#Main#0" expanded="false" />
+            <element signature="method#onRadioButtonClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onYearRadioClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onCheckboxClicked#0;class#Main#0" expanded="false" />
+            <element signature="method#onNavigationDrawerItemSelected#0;class#Main#0" expanded="false" />
+            <element signature="method#onSectionAttached#0;class#Main#0" expanded="false" />
+            <element signature="method#restoreActionBar#0;class#Main#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#Main#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#Main#0" expanded="false" />
+            <element signature="class#PlaceholderFragment#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/PlanFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.7872863" vertical-offset="540" max-vertical-offset="3383">
-          <caret line="189" column="24" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1462">
+          <caret line="161" column="25" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="86" />
           <folding>
-            <element signature="e#1453#1461#0" expanded="true" />
-            <element signature="e#2238#2246#0" expanded="true" />
-            <element signature="e#3669#3677#0" expanded="true" />
-            <element signature="e#4684#4710#0" expanded="true" />
-            <element signature="e#4880#4888#0" expanded="true" />
-            <element signature="e#4935#4943#0" expanded="true" />
-            <element signature="e#5266#5294#0" expanded="true" />
-            <element signature="e#5329#5365#0" expanded="true" />
-            <element signature="e#5568#5596#0" expanded="true" />
-            <element signature="e#5643#5679#0" expanded="true" />
-            <element signature="e#5720#5756#0" expanded="true" />
-            <element signature="e#5879#5887#0" expanded="true" />
-            <element signature="e#5934#5942#0" expanded="true" />
-            <element signature="e#7102#7429#0" expanded="true" />
-            <element signature="e#7418#7419#0" expanded="true" />
+            <element signature="method#PlanFragment#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#setCurrsem#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#setPast#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#makePlan#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#findLastCourseTaken#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#findNextCourses#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#makePlan#1;class#PlanFragment#0" expanded="false" />
+            <element signature="method#storeResults#0;class#PlanFragment#0" expanded="false" />
+            <element signature="method#onPause#0;class#PlanFragment#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/smartadvisor/GetPastCourses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3765281" vertical-offset="492" max-vertical-offset="918">
+          <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

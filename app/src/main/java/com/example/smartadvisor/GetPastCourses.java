@@ -5,6 +5,8 @@ package com.example.smartadvisor;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,7 +16,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -24,6 +29,7 @@ import java.util.List;
 public class GetPastCourses extends Fragment {
 
     ArrayList<Course> past;
+    CourseChart c = new CourseChart();
 
 
     public GetPastCourses() {
@@ -43,6 +49,15 @@ public class GetPastCourses extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
                 GetNextSemester nextSem = new GetNextSemester();
+                SharedPreferences shared = getActivity().getPreferences(Context.MODE_PRIVATE);
+                Set<String> p;
+                p = shared.getStringSet("past", null);
+                Iterator<String> it = p.iterator();
+                if(p != null){
+                    while (it.hasNext()){
+                        past.add(c.getCourse(it.next()));
+                    }
+                }
                 nextSem.setPast(past);
                 ft.replace(R.id.container, nextSem);
                 ft.commit();
