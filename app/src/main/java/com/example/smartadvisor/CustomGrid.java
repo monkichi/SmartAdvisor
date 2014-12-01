@@ -7,14 +7,21 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
 public class CustomGrid extends BaseAdapter{
     private Context mContext;
     private final String[] web;
-    private final int Imageid;
-    public CustomGrid(Context c,String[] web,int Imageid ) {
+    private int Imageid;
+    private CourseChart courseChart;
+    private ArrayList<Semester> p;
+    public CustomGrid(Context c,String[] web,int Imageid, ArrayList<Semester> plan) {
         mContext = c;
         this.Imageid = Imageid;
         this.web = web;
+        p = plan;
+        courseChart = new CourseChart();
     }
     @Override
     public int getCount() {
@@ -43,7 +50,13 @@ public class CustomGrid extends BaseAdapter{
             TextView textView = (TextView) grid.findViewById(R.id.grid_text);
             ImageView imageView = (ImageView)grid.findViewById(R.id.grid_image);
             textView.setText(web[position]);
+            if(web[position].contains("Fall")){
+                this.Imageid = R.drawable.fall_semester_up;
+            }else{
+                this.Imageid = R.drawable.spring_semester_over;
+            }
             imageView.setImageResource(Imageid);
+
         } else {
             grid = (View) convertView;
         }

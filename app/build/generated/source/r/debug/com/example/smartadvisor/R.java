@@ -35,10 +35,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int classviews=0x7f020003;
         public static final int classviews2=0x7f020004;
         public static final int drawer_shadow=0x7f020005;
-        public static final int ic_drawer=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int menu_icon=0x7f020008;
-        public static final int navdrawer=0x7f020009;
+        public static final int fall_semester_up=0x7f020006;
+        public static final int ic_drawer=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int menu_icon=0x7f020009;
+        public static final int navdrawer=0x7f02000a;
+        public static final int spring_semester_over=0x7f02000b;
     }
     public static final class id {
         public static final int action_example=0x7f090025;

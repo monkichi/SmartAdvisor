@@ -186,18 +186,24 @@ public class PlanFragment extends Fragment {
     }
 
     @Override
+    public void onPause(){
+        super.onPause();
+        storeResults();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.fragment_main, container, false);
         GridView grid;
-        CustomGrid adapter = new CustomGrid(getActivity(), web, R.color.red);
+        CustomGrid adapter = new CustomGrid(getActivity(), web, R.color.red, plan);
         grid=(GridView) rootview.findViewById(R.id.gridview);
         grid.setAdapter(adapter);
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(getActivity(), "You Clicked at " + web[position], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "You Clicked at " + web[position], Toast.LENGTH_SHORT).show();
             }
         });
         return rootview;
