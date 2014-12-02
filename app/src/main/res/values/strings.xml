@@ -7,7 +7,6 @@
     <string name="number_semesters">number of semesters</string>
     <string name="planmade">planmade</string>
     <string name="type">type</string>
-
     <string name="app_name">Smart Advisor</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -54,5 +53,7 @@
     <string name="input_next_semester">Please input the next semester.</string>
     <string name="fall">Fall </string>
     <string name="spring">Spring </string>
+    <string name="no_classes">No Classes Yet</string>
+    <string name="done_button">Done</string>
 
 </resources>

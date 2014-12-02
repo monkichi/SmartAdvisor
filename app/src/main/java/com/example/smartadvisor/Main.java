@@ -7,31 +7,20 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.Spinner;
-import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
-import java.util.List;
 
 
 public class Main extends Activity
@@ -45,10 +34,9 @@ public class Main extends Activity
 
     //variables for other purposes (data storage, info about student classes, etc)
     ArrayList<Course> past;
-    CourseChart c = new CourseChart();
     String semester;
     int year;
-    boolean planmade;
+    boolean planMade;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -63,14 +51,14 @@ public class Main extends Activity
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-        // Set up the drawer.
+        // Sets up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         past = new ArrayList<Course>();
 
-        checknewuser();
+        checkNewUser();
     }
 
     @Override
@@ -82,21 +70,21 @@ public class Main extends Activity
 
         // create hash set for each semester. load classes for semester into set then pass to shared preferences
         HashSet<String> p = new HashSet<String>();
-        for(int i=0; i < past.size(); i++){
-            p.add(past.get(i).getName());
+        for (Course aPast : past) {
+            p.add(aPast.getName());
         }
         editor.putStringSet("past", p);
         editor.putInt(getString(R.string.year), year);
         editor.putString(semester, semester);
         editor.putString(type,type);
-        editor.commit();
+        editor.apply();
     }
 
-    public void checknewuser() {
+    public void checkNewUser() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         SharedPreferences shared = getPreferences(Context.MODE_PRIVATE);
-        planmade = shared.getBoolean(getString(R.string.planmade), false);
+        planMade = shared.getBoolean(getString(R.string.planmade), false);
         type = shared.getString(getString(R.string.type), null);
         if (type != null) {
             PlanFragment planFragment = new PlanFragment();
@@ -104,8 +92,8 @@ public class Main extends Activity
             ft.replace(R.id.container, planFragment);
             ft.commit();
         } else {
-            BlankFragment blankFragment = new BlankFragment();
-            ft.add(R.id.container, blankFragment);
+            RadialFragment radialFragment = new RadialFragment();
+            ft.add(R.id.container, radialFragment);
             ft.commit();
         }
     }
@@ -125,7 +113,7 @@ public class Main extends Activity
         SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
         SharedPreferences.Editor editor = shared.edit();
         editor.putString(getString(R.string.type), type);
-        editor.commit();
+        editor.apply();
     }
 
     public void onSemesterRadioClicked(View view){
@@ -158,7 +146,7 @@ public class Main extends Activity
     }
 
     public void onCheckboxClicked(View view) {
-        // Is the view now checked?
+        // boolean to determine whether or not the view object is now checked
         boolean checked = ((CheckBox) view).isChecked();
         CourseChart courseChart = new CourseChart();
         // Check which checkbox was clicked
@@ -275,6 +263,7 @@ public class Main extends Activity
 
     public void restoreActionBar() {
         ActionBar actionBar = getActionBar();
+        assert actionBar != null;
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
@@ -300,15 +289,16 @@ public class Main extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
+
     /**
-     * A placeholder fragment containing a simple view.
-     */
+     * A placeholder fragment containing a simple view.  This fragment is used as part of the
+     * fragment transaction function.  Not sure if all items are necessary, but left alone as so
+     * not to break anything.
+    */
+
     public static class PlaceholderFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
@@ -334,8 +324,7 @@ public class Main extends Activity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.fragment_main, container, false);
         }
 
         @Override
