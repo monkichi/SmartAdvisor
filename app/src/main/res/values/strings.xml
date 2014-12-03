@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="past">past</string>
     <string name="future">future</string>
     <string name="year">year</string>
     <string name="current_semester">current</string>

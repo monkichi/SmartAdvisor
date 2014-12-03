@@ -50,8 +50,8 @@ public class GetPastCourses extends Fragment {
                 FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
                 GetNextSemester nextSem = new GetNextSemester();
                 SharedPreferences shared = getActivity().getPreferences(Context.MODE_PRIVATE);
-                Set<String> p;
-                p = shared.getStringSet("past", null);
+                Set<String> p = new HashSet<String>();
+                p = shared.getStringSet(getString(R.string.past), p);
                 Iterator<String> it = p.iterator();
                 if(p != null){
                     while (it.hasNext()){
