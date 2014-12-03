@@ -31,11 +31,13 @@ public class GetPastCourses extends Fragment {
     ArrayList<Course> past;
     CourseChart c = new CourseChart();
 
-
     public GetPastCourses() {
         // Required empty public constructor
     }
 
+    public ArrayList<Course> getPast() {
+        return past;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
