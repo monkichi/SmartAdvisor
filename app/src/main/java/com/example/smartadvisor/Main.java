@@ -233,16 +233,6 @@ public class Main extends Activity
                 past.clear();
                 break;
         }
-        SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
-        SharedPreferences.Editor editor = shared.edit();
-
-        // create hash set for each semester. load classes for semester into set then pass to shared preferences
-        HashSet<String> p = new HashSet<String>();
-        for (Course aPast : past) {
-            p.add(aPast.getName());
-        }
-        editor.putStringSet(getString(R.string.past), p);
-        editor.commit();
 
     }
 
