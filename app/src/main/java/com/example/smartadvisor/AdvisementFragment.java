@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class AdvisementFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SECTION_NUMBER = "section_number";
     private ArrayList<Course> allCourses;
@@ -62,7 +61,7 @@ public class AdvisementFragment extends Fragment {
         for (Course allCourse : allCourses) {
             courseList.add(allCourse.toString());
         }
-        // not yet implemented...
+        // TODO: not yet implemented...
         // can only calculate a plan to graduate based off of past courses
         //currentCourses = new GetCurrentCourses().getCurrent();
 
