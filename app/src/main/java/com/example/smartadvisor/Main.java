@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,7 +32,6 @@ public class Main extends Activity
      */
     String type;
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
     //variables for other purposes (data storage, info about student classes, etc)
     ArrayList<Course> past;
     String semester;
@@ -237,12 +237,15 @@ public class Main extends Activity
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onNavigationDrawerItemSelected (int position) {
         // update the main content by replacing fragments
-        FragmentManager fragmentManager = getFragmentManager();
+        /*FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+                .commit();*/
+
+        displayView(position);
+
     }
 
     public void onSectionAttached(int number) {
@@ -260,6 +263,32 @@ public class Main extends Activity
                 mTitle = getString(R.string.Settings);
                 break;
         }
+    }
+
+    private void displayView(int position) {
+        // update the main content by replacing fragments
+        Fragment fragment = PlaceholderFragment.newInstance(position + 1);
+
+        switch (position) {
+            case 1:
+                //
+                break;
+            case 2:
+                //
+                break;
+            case 3:
+                fragment = AdvisementFragment.newInstance(position);
+                break;
+            case 4:
+                //
+                break;
+            default:
+                break;
+        }
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment).commit();
     }
 
     public void restoreActionBar() {

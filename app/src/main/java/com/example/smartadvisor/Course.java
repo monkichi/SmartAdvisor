@@ -32,4 +32,9 @@ public class Course {
     public boolean isElective(){
         return elective;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
