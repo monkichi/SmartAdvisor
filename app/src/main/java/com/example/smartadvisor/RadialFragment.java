@@ -20,6 +20,10 @@ import android.widget.Toast;
  * A simple {@link Fragment} subclass used to implement a radial button.
  *
  */
+
+//This is to get the type of student. Maybe we can use this to display a selected number of classes
+    //for them to select which ones they have taken?
+
 public class RadialFragment extends Fragment {
 
     public RadialFragment() {

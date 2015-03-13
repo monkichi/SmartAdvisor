@@ -25,7 +25,7 @@ import java.util.Calendar;
  *
  */
 
-//TODO: get next semester
+// Gets next semester so we know where to start the plan from
 
 public class GetNextSemester extends Fragment {
 

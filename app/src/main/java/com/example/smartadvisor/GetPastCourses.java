@@ -26,10 +26,14 @@ import java.util.Set;
  * A simple {@link Fragment} subclass.
  *
  */
+
+//TODO: Make a list view (or grid view) of all the classes for them to select
+//If the group decides then we can set it up for the user to type each course.
+//Although to I try to minimize typing so a grid view or list view seems easier
+
 public class GetPastCourses extends Fragment {
 
     ArrayList<Course> past;
-    CourseChart c = new CourseChart();
 
 
     public GetPastCourses() {
@@ -42,27 +46,7 @@ public class GetPastCourses extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_get_past_courses, container, false);
-        past = new ArrayList<Course>();
-        final Button done = (Button) rootview.findViewById(R.id.done);
-        done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-                GetNextSemester nextSem = new GetNextSemester();
-                SharedPreferences shared = getActivity().getPreferences(Context.MODE_PRIVATE);
-                Set<String> p = new HashSet<String>();
-                p = shared.getStringSet(getString(R.string.past), p);
-                Iterator<String> it = p.iterator();
-                if(p != null){
-                    while (it.hasNext()){
-                        past.add(c.getCourse(it.next()));
-                    }
-                }
-                nextSem.setPast(past);
-                ft.replace(R.id.container, nextSem);
-                ft.commit();
-            }
-        });
+
         return rootview;
     }
 }

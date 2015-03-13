@@ -14,14 +14,12 @@ public class CustomGrid extends BaseAdapter{
     private Context mContext;
     private final String[] web;
     private int Imageid;
-    private CourseChart courseChart;
     private ArrayList<Semester> p;
     public CustomGrid(Context c,String[] web,int Imageid, ArrayList<Semester> plan) {
         mContext = c;
         this.Imageid = Imageid;
         this.web = web;
         p = plan;
-        courseChart = new CourseChart();
     }
     @Override
     public int getCount() {

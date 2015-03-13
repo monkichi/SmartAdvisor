@@ -33,14 +33,12 @@ public class Main extends Activity
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     //variables for other purposes (data storage, info about student classes, etc)
-    ArrayList<Course> past;
-    String semester;
-    int year;
-    boolean planMade;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+
+    //TODO: will add the database to hold the courses taken and the plan 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +54,6 @@ public class Main extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        past = new ArrayList<Course>();
-
         checkNewUser();
     }
 
@@ -65,7 +61,7 @@ public class Main extends Activity
     public void onStop(){
         super.onStop();
 
-        SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
+        /*SharedPreferences shared = getSharedPreferences(getString(R.string.future), 0);
         SharedPreferences.Editor editor = shared.edit();
 
         // create hash set for each semester. load classes for semester into set then pass to shared preferences
@@ -78,13 +74,13 @@ public class Main extends Activity
         editor.putString(semester, semester);
         editor.putString(type,type);
         editor.apply();
+        */
     }
 
     public void checkNewUser() {
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         SharedPreferences shared = getPreferences(Context.MODE_PRIVATE);
-        planMade = shared.getBoolean(getString(R.string.planmade), false);
         type = shared.getString(getString(R.string.type), null);
         if (type != null) {
             PlanFragment planFragment = new PlanFragment();
@@ -121,11 +117,9 @@ public class Main extends Activity
         switch (view.getId()){
             case R.id.get_Fall:
                 if(checked)
-                    semester = "Fall";
                 break;
             case R.id.get_Spring:
                 if(checked)
-                    semester = "Spring";
                 break;
         }
     }
@@ -136,11 +130,9 @@ public class Main extends Activity
         switch (view.getId()){
             case R.id.curr_year:
                 if(checked)
-                    year = c.get(Calendar.YEAR);
                 break;
             case R.id.next_year:
                 if(checked)
-                    year = c.get(Calendar.YEAR) + 1;
                 break;
         }
     }
@@ -148,9 +140,8 @@ public class Main extends Activity
     public void onCheckboxClicked(View view) {
         // boolean to determine whether or not the view object is now checked
         boolean checked = ((CheckBox) view).isChecked();
-        CourseChart courseChart = new CourseChart();
         // Check which checkbox was clicked
-        switch(view.getId()) {
+        /*switch(view.getId()) {
             case R.id.comp108check:
                 if (checked)
                     past.add(courseChart.getCourse("Comp 108"));
@@ -232,7 +223,7 @@ public class Main extends Activity
             case R.id.noclasses:
                 past.clear();
                 break;
-        }
+        }*/
 
     }
 
