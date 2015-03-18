@@ -27,11 +27,12 @@ import java.util.List;
 public class GetMajor extends Fragment {
 
     int count = 0 ; // this is used for counting the number of stored data
-    String url = "http://www.csun.edu/catalog/planning/plans/2010/computer-engineering-4/";
+    String url = "http://www.csun.edu/catalog/planning/plans/2010/computer-engineering-4";
     ProgressDialog mProgressDialog;
     public static final String PREFS_NAME = "MyPrefsFile"; // name of stored data table
     List<String> example = new ArrayList<String>(); // this is attached to autocomplete text adaptor
     List<String> saved = new ArrayList<String>(); //this is connected to list view to display saved items
+    View rootview;
 
 
     //private OnFragmentInteractionListener mListener;
@@ -70,7 +71,7 @@ public class GetMajor extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_get_major, container, false);
+        rootview = inflater.inflate(R.layout.fragment_get_major, container, false);
         Button titlebutton = (Button) rootview.findViewById(R.id.titlebutton);
         Button descbutton = (Button) rootview.findViewById(R.id.descbutton);
         AutoCompleteTextView textView = (AutoCompleteTextView) rootview.findViewById(R.id.autocomplete_course);
@@ -108,7 +109,7 @@ public class GetMajor extends Fragment {
                 new Description().execute();
             }
         });
-        return inflater.inflate(R.layout.fragment_get_major, container, false);
+        return rootview;
     }
 
     /*// TODO: Rename method, update argument and hook method into UI event
@@ -180,7 +181,7 @@ public class GetMajor extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             // Set title into TextView
-            TextView txttitle = (TextView) getActivity().findViewById(R.id.titletxt);
+            TextView txttitle = (TextView) rootview.findViewById(R.id.titletxt);
             txttitle.setText(title);
             mProgressDialog.dismiss();
         }
@@ -249,7 +250,7 @@ public class GetMajor extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             // Set description into TextView
-            TextView txtdesc = (TextView) getActivity().findViewById(R.id.desctxt);
+            TextView txtdesc = (TextView) rootview.findViewById(R.id.desctxt);
             txtdesc.setText(desc);
             SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
             // here im adding the saved items to its arraylist
