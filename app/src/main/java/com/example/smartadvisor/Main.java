@@ -6,8 +6,10 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,14 +19,14 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.List;
 
 
 public class Main extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks{//, GetMajor.OnFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -37,8 +39,7 @@ public class Main extends Activity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
-
-    //TODO: will add the database to hold the courses taken and the plan 
+    //TODO: will add the database to hold the courses taken and the plan
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,13 +84,10 @@ public class Main extends Activity
         SharedPreferences shared = getPreferences(Context.MODE_PRIVATE);
         type = shared.getString(getString(R.string.type), null);
         if (type != null) {
-            PlanFragment planFragment = new PlanFragment();
-            planFragment.getResults();
-            ft.replace(R.id.container, planFragment);
-            ft.commit();
+
         } else {
-            RadialFragment radialFragment = new RadialFragment();
-            ft.add(R.id.container, radialFragment);
+            GetMajor g = new GetMajor();
+            ft.add(R.id.container, g);
             ft.commit();
         }
     }
@@ -140,90 +138,6 @@ public class Main extends Activity
     public void onCheckboxClicked(View view) {
         // boolean to determine whether or not the view object is now checked
         boolean checked = ((CheckBox) view).isChecked();
-        // Check which checkbox was clicked
-        /*switch(view.getId()) {
-            case R.id.comp108check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 108"));
-                else
-                    past.remove(courseChart.getCourse("Comp 108"));
-                break;
-            case R.id.comp110check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 110/L"));
-                else
-                    past.remove(courseChart.getCourse("Comp 110/L"));
-                break;
-            case R.id.comp122check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 122/L"));
-                else
-                    past.remove(courseChart.getCourse("Comp 122/L"));
-                break;
-            case R.id.comp182check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 182/L"));
-                else
-                    past.remove(courseChart.getCourse("Comp 182/L"));
-                break;
-            case R.id.comp222check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 222"));
-                else
-                    past.remove(courseChart.getCourse("Comp 222"));
-                break;
-            case R.id.comp256_Lcheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 256/L"));
-                else
-                    past.remove(courseChart.getCourse("Comp 256/L"));
-                break;
-            case R.id.comp282check:
-                if (checked)
-                    past.add(courseChart.getCourse("Comp 282"));
-                else
-                    past.remove(courseChart.getCourse("Comp 282"));
-                break;
-            case R.id.math102check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 102"));
-                else
-                    past.remove(courseChart.getCourse("Math 102"));
-                break;
-            case R.id.math104check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 104"));
-                else
-                    past.remove(courseChart.getCourse("Math 104"));
-                break;
-            case R.id.math150Acheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 150A"));
-                else
-                    past.remove(courseChart.getCourse("Math 150A"));
-                break;
-            case R.id.math150Bcheck:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 150B"));
-                else
-                    past.remove(courseChart.getCourse("Math 150B"));
-                break;
-            case R.id.math262check:
-                if (checked)
-                    past.add(courseChart.getCourse("Math 262"));
-                else
-                    past.remove(courseChart.getCourse("Math 262"));
-                break;
-            case R.id.phil230check:
-                if (checked)
-                    past.add(courseChart.getCourse("Phil 230"));
-                else
-                    past.remove(courseChart.getCourse("Phil 230"));
-                break;
-            case R.id.noclasses:
-                past.clear();
-                break;
-        }*/
 
     }
 
@@ -240,9 +154,11 @@ public class Main extends Activity
         switch (number) {
             case 1:
                 mTitle = getString(R.string.Home);
+                checkNewUser();
                 break;
             case 2:
                 mTitle = getString(R.string.Past);
+
                 break;
             case 3:
                 mTitle = getString(R.string.Advisement);

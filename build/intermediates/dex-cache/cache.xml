@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-9486f116227f8d5b170aa22617dc217d0d43cb3b.jar"
-        jar="C:\Users\nano\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.2\support-annotations-21.0.2.jar"
+        jar="/home/dfh94037/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
         jumboMode="false"
-        revision="21.1.1"
-        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6"/>
+        revision="20.0.0"
+        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
+        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-2db4c99b80e1046f869f9c230bed46b647f208c5.jar" />
+    </item>
     <item
-        dex="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\build\intermediates\pre-dexed\debug\classes-b528f94f34bf1e822da19de6fc1be32fdf61823e.jar"
-        jar="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\classes.jar"
+        jar="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
         jumboMode="false"
-        revision="21.1.1"
-        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3"/>
+        revision="20.0.0"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-c83d58b7f4b4cd8aa69fb1ba1ecc3b4b8179d92d.jar" />
+    </item>
     <item
-        dex="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-eb1f7bd3aad691e093e48f015f6fbdbecb4964d9.jar"
-        jar="C:\Users\nano\AndroidstudioProjects\SmartAdvisor\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\libs\internal_impl-21.0.2.jar"
+        jar="/home/dfh94037/android-projects/SmartAdvisor/app/libs/jsoup-1.8.1.jar"
         jumboMode="false"
-        revision="21.1.1"
-        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f"/>
+        revision="20.0.0"
+        sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
+        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-e805874402421fa07b39d9b349828427cb37d4c6.jar" />
+    </item>
+    <item
+        jar="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
+        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/classes-d10f2915df551a9b4cb138383158a5affbf69e8b.jar" />
+    </item>
 
-</pre-dex-items>
+</items>

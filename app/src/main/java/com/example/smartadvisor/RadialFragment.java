@@ -42,10 +42,10 @@ public class RadialFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager fm = getFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
-                GetPastCourses get = new GetPastCourses();
+                /*GetPastCourses get = new GetPastCourses();
                 ft.add(R.id.container, get);
                 ft.addToBackStack(null);
-                ft.commit();
+                ft.commit();*/
             }
 
         });
