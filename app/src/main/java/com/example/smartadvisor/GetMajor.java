@@ -1,8 +1,10 @@
 package com.example.smartadvisor;
 
 import android.app.Activity;
+import android.app.ListFragment;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,9 +13,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import org.jsoup.Jsoup;
@@ -22,6 +28,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 public class GetMajor extends Fragment {
@@ -31,15 +38,15 @@ public class GetMajor extends Fragment {
     ProgressDialog mProgressDialog;
     public static final String PREFS_NAME = "MyPrefsFile"; // name of stored data table
     List<String> example = new ArrayList<String>(); // this is attached to autocomplete text adaptor
-    List<String> saved = new ArrayList<String>(); //this is connected to list view to display saved items
+    List<String> saved; //this is connected to list view to display saved items
     View rootview;
-
+    ArrayAdapter<String> mSaved;
 
     //private OnFragmentInteractionListener mListener;
     // TODO: Rename and change types and number of parameters
     public static GetMajor newInstance(String param1, String param2) {
         GetMajor fragment = new GetMajor();
-        Bundle args = new Bundle();
+        //Bundle args = new Bundle();
         //args.putString(ARG_PARAM1, param1);
         //args.putString(ARG_PARAM2, param2);
         //fragment.setArguments(args);
@@ -53,18 +60,6 @@ public class GetMajor extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE); // instance of the table
-//this down here , checks to see if theres any data saved before , is attaches them to the adaptor
-        if(prefs.contains("last")){
-            int lastitem = Integer.parseInt( prefs.getString("last", null));
-            for(int i=0; i< lastitem ; i++)
-                saved.add( prefs.getString(Integer.toString(i),null) );
-        }
-
-        example.add("example");
-        example.add("second");
-        saved.add("first");
     }
 
     @Override
@@ -72,6 +67,20 @@ public class GetMajor extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_get_major, container, false);
+        SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE); // instance of the table
+//this down here , checks to see if theres any data saved before , is attaches them to the adaptor
+        saved = new ArrayList<String>();
+        if(prefs.contains("last")){
+            int lastitem = Integer.parseInt( prefs.getString("last", "0"));
+            for(int i=0; i< lastitem ; i++) {
+                if(prefs.contains(Integer.toString(i)))
+                    saved.add(prefs.getString(Integer.toString(i), null));
+            }
+        }
+
+        example.add("example");
+        example.add("second");
+        ListView listview = (ListView)rootview.findViewById(R.id.listView);
         Button titlebutton = (Button) rootview.findViewById(R.id.titlebutton);
         Button descbutton = (Button) rootview.findViewById(R.id.descbutton);
         AutoCompleteTextView textView = (AutoCompleteTextView) rootview.findViewById(R.id.autocomplete_course);
@@ -82,17 +91,10 @@ public class GetMajor extends Fragment {
         // Create an ArrayAdapter containing course names
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 R.layout.list_item, example);
-        ArrayAdapter<String> mSaved = new ArrayAdapter<String>(getActivity(),
+        mSaved = new ArrayAdapter<String>(rootview.getContext(),
                 R.layout.list_item, saved);
 
-        // Set the adapter for the AutoCompleteTextView
-        textView.setAdapter(adapter);
-        ListView listview = (ListView)rootview.findViewById(R.id.listView);
         listview.setAdapter(mSaved);
-
-
-
-
 
         // Capture button click where it download the title of the page
         titlebutton.setOnClickListener(new View.OnClickListener() {
@@ -109,9 +111,11 @@ public class GetMajor extends Fragment {
                 new Description().execute();
             }
         });
+        // Set the adapter for the AutoCompleteTextView
+        textView.setAdapter(mSaved);
+        //listview.setAdapter(mSaved);
         return rootview;
     }
-
     /*// TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -169,7 +173,7 @@ public class GetMajor extends Fragment {
         protected Void doInBackground(Void... params) {
             try {
                 // Connect to the web site
-                Document document = Jsoup.connect(url).get();
+                Document document = Jsoup.connect("http://www.csun.edu/catalog/planning/plans/2010").get();
                 // Get the html document title
                 title = document.title();
             } catch (IOException e) {
@@ -181,7 +185,7 @@ public class GetMajor extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             // Set title into TextView
-            TextView txttitle = (TextView) rootview.findViewById(R.id.titletxt);
+            TextView txttitle = (TextView) getActivity().findViewById(R.id.titletxt);
             txttitle.setText(title);
             mProgressDialog.dismiss();
         }
@@ -225,9 +229,9 @@ public class GetMajor extends Fragment {
                             editor.putString( "last", Integer.toString(count));
                             //        editor.putInt("idName", i);
                             editor.commit();
-
-                            downServers.add(rows.get(i).text());
-
+                            //if(rows.get(i) != null) {
+                                downServers.add(rows.get(i).text());
+                            //}
                         }
 
                     }
@@ -238,25 +242,21 @@ public class GetMajor extends Fragment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
-
-
-
-
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
             // Set description into TextView
-            TextView txtdesc = (TextView) rootview.findViewById(R.id.desctxt);
+            TextView txtdesc = (TextView) getActivity().findViewById(R.id.desctxt);
             txtdesc.setText(desc);
             SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
             // here im adding the saved items to its arraylist
 
             for(int i=1;i<count ; i++){
-                saved.add(prefs.getString( Integer.toString(i),"No name defined"));
+                if(prefs.getString(Integer.toString(i),"No name defined") != null) {
+                    saved.add(prefs.getString(Integer.toString(i), "No name defined"));
+                }
             }
 
 

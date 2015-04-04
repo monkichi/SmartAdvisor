@@ -33,14 +33,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fall_semester_up=0x7f020001;
         public static final int ic_drawer=0x7f020002;
         public static final int ic_launcher=0x7f020003;
-        public static final int spring_semester_over=0x7f020004;
+        public static final int next=0x7f020004;
+        public static final int spring_semester_over=0x7f020005;
     }
     public static final class id {
         public static final int action_settings=0x7f09001d;
-        public static final int autocomplete_course=0x7f090005;
+        public static final int autocomplete_course=0x7f090004;
         public static final int btnDisplay=0x7f090011;
         public static final int container=0x7f090001;
-        public static final int course=0x7f090004;
+        public static final int course=0x7f090005;
         public static final int curr_year=0x7f090018;
         public static final int descbutton=0x7f090007;
         public static final int desctxt=0x7f090008;

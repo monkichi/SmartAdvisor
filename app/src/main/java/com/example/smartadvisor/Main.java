@@ -135,12 +135,6 @@ public class Main extends Activity
         }
     }
 
-    public void onCheckboxClicked(View view) {
-        // boolean to determine whether or not the view object is now checked
-        boolean checked = ((CheckBox) view).isChecked();
-
-    }
-
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments

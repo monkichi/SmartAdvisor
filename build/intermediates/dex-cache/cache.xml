@@ -9,18 +9,18 @@
         <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-2db4c99b80e1046f869f9c230bed46b647f208c5.jar" />
     </item>
     <item
-        jar="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
-        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-c83d58b7f4b4cd8aa69fb1ba1ecc3b4b8179d92d.jar" />
-    </item>
-    <item
         jar="/home/dfh94037/android-projects/SmartAdvisor/app/libs/jsoup-1.8.1.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="3d57e95c0f150b885ccdbda7a12bef353fd31d02">
         <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/jsoup-1.8.1-e805874402421fa07b39d9b349828427cb37d4c6.jar" />
+    </item>
+    <item
+        jar="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-c83d58b7f4b4cd8aa69fb1ba1ecc3b4b8179d92d.jar" />
     </item>
     <item
         jar="/home/dfh94037/android-projects/SmartAdvisor/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
