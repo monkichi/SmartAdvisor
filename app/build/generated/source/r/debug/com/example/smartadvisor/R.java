@@ -34,39 +34,38 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_drawer=0x7f020002;
         public static final int ic_launcher=0x7f020003;
         public static final int next=0x7f020004;
-        public static final int spring_semester_over=0x7f020005;
+        public static final int nextpressed=0x7f020005;
+        public static final int spring_semester_over=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001d;
+        public static final int action_settings=0x7f09001b;
         public static final int autocomplete_course=0x7f090004;
-        public static final int btnDisplay=0x7f090011;
+        public static final int btnDisplay=0x7f09000e;
         public static final int container=0x7f090001;
-        public static final int course=0x7f090005;
-        public static final int curr_year=0x7f090018;
-        public static final int descbutton=0x7f090007;
-        public static final int desctxt=0x7f090008;
-        public static final int done=0x7f09000b;
+        public static final int course=0x7f090003;
+        public static final int courselist=0x7f090007;
+        public static final int curr_year=0x7f090015;
+        public static final int done=0x7f090008;
         public static final int drawer_layout=0x7f090000;
-        public static final int fragment_get_past_courses=0x7f09000a;
-        public static final int fragment_incoming_student=0x7f09000c;
-        public static final int fresh_radio=0x7f09000f;
-        public static final int get_Fall=0x7f090015;
-        public static final int get_Spring=0x7f090016;
-        public static final int get_semester=0x7f090014;
-        public static final int get_year=0x7f090017;
-        public static final int grid_image=0x7f09001b;
-        public static final int grid_text=0x7f09001c;
-        public static final int gridview=0x7f090013;
-        public static final int listView=0x7f090009;
+        public static final int fragment_get_past_courses=0x7f090006;
+        public static final int fragment_incoming_student=0x7f090009;
+        public static final int fresh_radio=0x7f09000c;
+        public static final int get_Fall=0x7f090012;
+        public static final int get_Spring=0x7f090013;
+        public static final int get_semester=0x7f090011;
+        public static final int get_year=0x7f090014;
+        public static final int grid_image=0x7f090018;
+        public static final int grid_text=0x7f090019;
+        public static final int gridview=0x7f090010;
+        public static final int majordone=0x7f090005;
+        public static final int name=0x7f09001a;
         public static final int navigation_drawer=0x7f090002;
-        public static final int next_semester_button=0x7f09001a;
-        public static final int next_year=0x7f090019;
-        public static final int plan=0x7f090012;
-        public static final int section_label=0x7f09000d;
-        public static final int student_group=0x7f09000e;
-        public static final int titlebutton=0x7f090006;
-        public static final int titletxt=0x7f090003;
-        public static final int trans_radio=0x7f090010;
+        public static final int next_semester_button=0x7f090017;
+        public static final int next_year=0x7f090016;
+        public static final int plan=0x7f09000f;
+        public static final int section_label=0x7f09000a;
+        public static final int student_group=0x7f09000b;
+        public static final int trans_radio=0x7f09000d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -78,6 +77,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_next_semester=0x7f030006;
         public static final int grid_item=0x7f030007;
         public static final int list_item=0x7f030008;
+        public static final int my_adapter_item=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -98,21 +98,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int future=0x7f06000c;
         public static final int hello_blank_fragment=0x7f06000d;
         public static final int input_next_semester=0x7f06000e;
-        public static final int navigation_drawer_close=0x7f06000f;
-        public static final int navigation_drawer_open=0x7f060010;
-        public static final int new_student=0x7f060011;
-        public static final int no_classes=0x7f060012;
-        public static final int number_semesters=0x7f060013;
-        public static final int past=0x7f060014;
-        public static final int planmade=0x7f060015;
-        public static final int select_past_courses=0x7f060016;
-        public static final int spring=0x7f060017;
-        public static final int title_activity_incoming_student=0x7f060018;
-        public static final int title_activity_main=0x7f060019;
-        public static final int title_activity_mainactivity=0x7f06001a;
-        public static final int transfer=0x7f06001b;
-        public static final int type=0x7f06001c;
-        public static final int year=0x7f06001d;
+        public static final int major=0x7f06000f;
+        public static final int navigation_drawer_close=0x7f060010;
+        public static final int navigation_drawer_open=0x7f060011;
+        public static final int new_student=0x7f060012;
+        public static final int no_classes=0x7f060013;
+        public static final int number_semesters=0x7f060014;
+        public static final int past=0x7f060015;
+        public static final int planmade=0x7f060016;
+        public static final int select_past_courses=0x7f060017;
+        public static final int spring=0x7f060018;
+        public static final int title_activity_incoming_student=0x7f060019;
+        public static final int title_activity_main=0x7f06001a;
+        public static final int title_activity_mainactivity=0x7f06001b;
+        public static final int transfer=0x7f06001c;
+        public static final int type=0x7f06001d;
+        public static final int year=0x7f06001e;
     }
     public static final class style {
         /** 

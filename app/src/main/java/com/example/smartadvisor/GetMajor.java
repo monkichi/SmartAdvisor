@@ -1,6 +1,8 @@
 package com.example.smartadvisor;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -22,25 +24,29 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
 
 public class GetMajor extends Fragment {
-
-    int count = 0 ; // this is used for counting the number of stored data
-    String url = "http://www.csun.edu/catalog/planning/plans/2010/computer-engineering-4";
+    String url = "http://www.csun.edu/catalog/programs/major/";
     ProgressDialog mProgressDialog;
     public static final String PREFS_NAME = "MyPrefsFile"; // name of stored data table
-    List<String> example = new ArrayList<String>(); // this is attached to autocomplete text adaptor
-    List<String> saved; //this is connected to list view to display saved items
+    List<String> majors, links;
     View rootview;
     ArrayAdapter<String> mSaved;
+    HashMap<String, String> p;
 
     //private OnFragmentInteractionListener mListener;
     // TODO: Rename and change types and number of parameters
@@ -55,6 +61,7 @@ public class GetMajor extends Fragment {
 
     public GetMajor() {
         // Required empty public constructor
+        p=new HashMap<String, String>();
     }
 
     @Override
@@ -67,202 +74,104 @@ public class GetMajor extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.fragment_get_major, container, false);
-        SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE); // instance of the table
-//this down here , checks to see if theres any data saved before , is attaches them to the adaptor
-        saved = new ArrayList<String>();
-        if(prefs.contains("last")){
-            int lastitem = Integer.parseInt( prefs.getString("last", "0"));
-            for(int i=0; i< lastitem ; i++) {
-                if(prefs.contains(Integer.toString(i)))
-                    saved.add(prefs.getString(Integer.toString(i), null));
-            }
-        }
 
-        example.add("example");
-        example.add("second");
-        ListView listview = (ListView)rootview.findViewById(R.id.listView);
-        Button titlebutton = (Button) rootview.findViewById(R.id.titlebutton);
-        Button descbutton = (Button) rootview.findViewById(R.id.descbutton);
+        majors = new ArrayList<String>();
+        links = new ArrayList<String>();
+
+        final Button major = (Button) rootview.findViewById(R.id.majordone);
         AutoCompleteTextView textView = (AutoCompleteTextView) rootview.findViewById(R.id.autocomplete_course);
 
-
-
+        Title title = new Title();
+        title.execute();
 
         // Create an ArrayAdapter containing course names
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.layout.list_item, example);
+        final ArrayAdapter<String> linkadapter = new ArrayAdapter<String>(rootview.getContext(),
+                R.layout.list_item, links);
         mSaved = new ArrayAdapter<String>(rootview.getContext(),
-                R.layout.list_item, saved);
+                R.layout.list_item, majors);
 
-        listview.setAdapter(mSaved);
-
-        // Capture button click where it download the title of the page
-        titlebutton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Execute Title AsyncTask
-                new Title().execute();
-            }
-        });
-
-        // Capture button click where it fetched the data
-        descbutton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                // Execute Description AsyncTasK
-                new Description().execute();
-            }
-        });
-        // Set the adapter for the AutoCompleteTextView
         textView.setAdapter(mSaved);
-        //listview.setAdapter(mSaved);
+        textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String name = adapterView.getItemAtPosition(i).toString();
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE).edit();
+                editor.putString(getString(R.string.major), name);
+                editor.commit();
+            }
+        });
+        major.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                major.setBackgroundResource(R.drawable.nextpressed);
+                SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
+                String m = prefs.getString(getString(R.string.major), null);
+                if (m != null) {
+                    FragmentManager f = getActivity().getFragmentManager();
+                    FragmentTransaction ft = f.beginTransaction();
+                    GetPastCourses getpast = new GetPastCourses();
+                    getpast.setLink(m);
+                    getpast.setmajors(majors);
+                    ft.add(R.id.container, getpast);
+                    ft.commit();
+                }
+                else{
+                    major.setBackgroundResource(R.drawable.next);
+                }
+            }
+        });
+
         return rootview;
     }
-    /*// TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }*
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
-
-    /*@Override
-    public void onDetach() {
-        super.onDetach();
-        //mListener = null;
-    }*/
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    /*public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }*/
 
     // Title AsyncTask
     private class Title extends AsyncTask<Void, Void, Void> {
         String title;
-
+        Set<String> l;
+        Document document;
+        org.jsoup.nodes.Element element;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressDialog = new ProgressDialog(getActivity());
-            mProgressDialog.setTitle("getting the title");
+            mProgressDialog = new ProgressDialog(rootview.getContext());
+            mProgressDialog.setTitle("Getting Majors");
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
+
         }
 
         @Override
         protected Void doInBackground(Void... params) {
             try {
                 // Connect to the web site
-                Document document = Jsoup.connect("http://www.csun.edu/catalog/planning/plans/2010").get();
-                // Get the html document title
-                title = document.title();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // Set title into TextView
-            TextView txttitle = (TextView) getActivity().findViewById(R.id.titletxt);
-            txttitle.setText(title);
-            mProgressDialog.dismiss();
-        }
-    }
-
-    // Description AsyncTask
-    private class Description extends AsyncTask<Void, Void, Void> {
-        String desc;
-        ArrayList<String> downServers = new ArrayList<String>();
-        ArrayList<String> savedItem = new ArrayList<String>();
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressDialog = new ProgressDialog(getActivity());
-            mProgressDialog.setTitle("Getting courses");
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            mProgressDialog.show();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
                 Document document = Jsoup.connect(url).get();
-
                 SharedPreferences.Editor editor = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE).edit();
-// down here in a nutshell , I am getting to the paragraphs( being the courses)
-// of the html and get each element to
-// add them to the list
-                org.jsoup.nodes.Element table = document.select("table").get(1);
-                Elements rows = table.select("p");
-                desc = rows.get(2).text();
-                for(int j=0; j<= 7 ; j++) {
-                    table = document.select("table").get(j);
-                    rows = table.select("p");
-                    for (int i = 2; i < rows.size()-1; i++) {
-                        if (!rows.get(i).text().matches(("-?\\d+")) && !rows.get(i).text().matches(("Total"))) {
-                            Log.v("Courses", rows.get(i).text());
-                            count++;
-                            editor.putString( Integer.toString(count), rows.get(i).text());
-                            editor.putString( "last", Integer.toString(count));
-                            //        editor.putInt("idName", i);
-                            editor.commit();
-                            //if(rows.get(i) != null) {
-                                downServers.add(rows.get(i).text());
-                            //}
-                        }
 
-                    }
+                //So what I am doing here is getting all the <a> tags
+                // and saving their text which is the major name and
+                // saving the link to the major page that contains more
+                //info on the major that we will parse later
+                element = document.select("#wrap").first();
+                Elements e = element.select("a.dept-item");
+                for(int i = 0; i<e.size(); i++){
+                    //I just add the major name and corresponding website link to their
+                    //respective lists. Then I add them to the hashmap so each major can
+                    //be associated with a link
+                    //no need to save anything because only the major they pick matters
+                    majors.add(e.get(i).text());
+                    links.add(e.get(i).attr("href"));
+                    p.put(e.get(i).text(), e.get(i).attr("href"));
                 }
-
-
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return null;
         }
 
         @Override
         protected void onPostExecute(Void result) {
-            // Set description into TextView
-            TextView txtdesc = (TextView) getActivity().findViewById(R.id.desctxt);
-            txtdesc.setText(desc);
-            SharedPreferences prefs = getActivity().getSharedPreferences(PREFS_NAME, getActivity().MODE_PRIVATE);
-            // here im adding the saved items to its arraylist
-
-            for(int i=1;i<count ; i++){
-                if(prefs.getString(Integer.toString(i),"No name defined") != null) {
-                    saved.add(prefs.getString(Integer.toString(i), "No name defined"));
-                }
-            }
-
-
-            for(int i=0;i<downServers.size();i++)
-                example.add(downServers.get(i));
-
             mProgressDialog.dismiss();
         }
     }
