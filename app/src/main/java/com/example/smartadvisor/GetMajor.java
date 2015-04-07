@@ -110,7 +110,7 @@ public class GetMajor extends Fragment {
                     FragmentManager f = getActivity().getFragmentManager();
                     FragmentTransaction ft = f.beginTransaction();
                     GetPastCourses getpast = new GetPastCourses();
-                    getpast.setLink(m);
+                    getpast.setLink(p.get(m));
                     getpast.setmajors(majors);
                     ft.add(R.id.container, getpast);
                     ft.commit();

@@ -38,7 +38,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int spring_semester_over=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001b;
+        public static final int action_settings=0x7f09001a;
         public static final int autocomplete_course=0x7f090004;
         public static final int btnDisplay=0x7f09000e;
         public static final int container=0x7f090001;
@@ -58,7 +58,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int grid_text=0x7f090019;
         public static final int gridview=0x7f090010;
         public static final int majordone=0x7f090005;
-        public static final int name=0x7f09001a;
         public static final int navigation_drawer=0x7f090002;
         public static final int next_semester_button=0x7f090017;
         public static final int next_year=0x7f090016;
@@ -77,7 +76,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_next_semester=0x7f030006;
         public static final int grid_item=0x7f030007;
         public static final int list_item=0x7f030008;
-        public static final int my_adapter_item=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f080000;
