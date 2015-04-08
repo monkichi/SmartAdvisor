@@ -47,6 +47,7 @@ public class GetMajor extends Fragment {
     View rootview;
     ArrayAdapter<String> mSaved;
     HashMap<String, String> p;
+    GetPastCourses g;
 
     //private OnFragmentInteractionListener mListener;
     // TODO: Rename and change types and number of parameters
@@ -62,6 +63,7 @@ public class GetMajor extends Fragment {
     public GetMajor() {
         // Required empty public constructor
         p=new HashMap<String, String>();
+        g = new GetPastCourses();
     }
 
     @Override
@@ -109,10 +111,9 @@ public class GetMajor extends Fragment {
                 if (m != null) {
                     FragmentManager f = getActivity().getFragmentManager();
                     FragmentTransaction ft = f.beginTransaction();
-                    GetPastCourses getpast = new GetPastCourses();
-                    getpast.setLink(p.get(m));
-                    getpast.setmajors(majors);
-                    ft.add(R.id.container, getpast);
+                    //GetPastCourses getpast = new GetPastCourses();
+                    g.setLink(prefs.getString(m, null));
+                    ft.add(R.id.container, g);
                     ft.commit();
                 }
                 else{
@@ -162,7 +163,10 @@ public class GetMajor extends Fragment {
                     majors.add(e.get(i).text());
                     links.add(e.get(i).attr("href"));
                     p.put(e.get(i).text(), e.get(i).attr("href"));
+                    editor.putString(e.get(i).text(), links.get(i));
+                    editor.commit();
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

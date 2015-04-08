@@ -5,6 +5,7 @@ package com.example.smartadvisor;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -25,6 +27,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -48,9 +51,10 @@ public class GetPastCourses extends Fragment {
     String baseplan = null; //link to 4 year plan that I will use as a basis
     ArrayList<String> courses;//courses pulled from major website
     ArrayList<String> clinks; //course links that will contain info like prereqs
-    public static final String PREFS_NAME = "MyProfsFile"; // name of stored data table
-    String url = "http://www.csun.edu/catalog/academics/ece/courses/";
-    String name = null;
+    //public static final String PREFS_NAME = "MyProfsFile"; // name of stored data table
+    ProgressDialog mProgressDialog;
+    View rootview;
+    ListView l;
 
     public GetPastCourses() {
         // Required empty public constructor
@@ -58,59 +62,48 @@ public class GetPastCourses extends Fragment {
         clinks = new ArrayList<String>();
         past = new ArrayList<Course>();
     }
-    List<String> majors;
-    public void setLink(String l){
-        link = l;
-    }
-    public void setName(String n){name = n;}
-    public String getName(){return name;}
-    public void setmajors(List<String> m){majors = m;}
+    public void setLink(String courselink){link = courselink;}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_get_past_courses, container, false);
-        new GetCourses().execute();
-        courses.add(link);
-        ArrayAdapter<String> co = new ArrayAdapter<String>(rootview.getContext(),
-                R.layout.list_item, courses);
-        ListView l = (ListView) rootview.findViewById(R.id.courselist);
-        l.setAdapter(co);
-
-
+        rootview = inflater.inflate(R.layout.fragment_get_past_courses, container, false);
+        GetCourses g = new GetCourses();
+        g.execute();
         return rootview;
     }
 
     private class GetCourses extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
+
             super.onPreExecute();
+            /*mProgressDialog = new ProgressDialog(rootview.getContext());
+            mProgressDialog.setTitle("Getting Courses");
+            mProgressDialog.setMessage("Loading...");
+            mProgressDialog.setIndeterminate(false);
+            mProgressDialog.show();*/
         }
 
         @Override
         protected Void doInBackground(Void... params) {
             try{
-                //It can't seem to connect and get the title
-                //This doesn't seem to add it to the courses list and display
+                //Below i am getting all the links from a certain section that contains
+                //the list of classes needed to be taken to acquire the major. This includes
+                //classes not under the major name as well.
                 Document doc = Jsoup.connect(link).get();
-                /*Element element = doc.select("#inset-content").first()
-                        .select("div.row").first()
-                        .select("div.col-xs-12.col-sm-6.col-md-8.col-lg-8").first();*/
-                courses.add(doc.title());
-                //Element e = element.select("p");
-                /*Elements e = doc.select("#inset-content").first()
-                        .select("div.row").first()
-                        .select("div.col-xs-12.col-sm-6.col-md-8.col-lg-8");
+                Elements e = doc.select("#inset-content").first().select("div.section-content");
+                //this needs a little cleaning up because it will get the links but the whole
+                //name isn't always linked.
                 for(int i=0; i<e.size(); i++){
-                    //courses.add(e.get(i).text());
-                    Elements a = e.get(i).select("a");
+                    Elements a = e.get(i).select("p").select("a");
                     if(a.size() >0){
                         for(int j=0; j<a.size(); j++){
                             clinks.add(a.get(j).attr("href"));
-                            courses.add(a.text());
+                            courses.add(a.get(j).text());
                         }
                     }
-                }*/
+                }
             } catch(IOException e){
                 e.printStackTrace();
             }
@@ -118,6 +111,11 @@ public class GetPastCourses extends Fragment {
         }
         @Override
         protected void onPostExecute(Void result) {
+            //mProgressDialog.dismiss();
+            final ArrayAdapter<String> co = new ArrayAdapter<String>(rootview.getContext(),
+                    R.layout.list_item, courses);
+            l = (ListView) rootview.findViewById(R.id.courselist);
+            l.setAdapter(co);
 
         }
     }
